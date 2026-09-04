@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="circuits" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <sc-if value="{{ isConfirmed }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:96px 32px; max-width:640px">
+      <div class="tag tag-accent" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:20px">Registration confirmed</div>
+      <h1 style="font-size:36px; line-height:1.1; letter-spacing:-.02em; margin:0 0 16px">You're registered for the {{ confirmedCircuitName }} circuit, {{ confirmedWindow }}.</h1>
+      <p class="text-muted" style="font-size:14px; line-height:1.6; margin:0 0 28px; max-width:52ch">A confirmation email is on its way to {{ formEmail }} with the route file and challenge window details. You'll submit your run for verification once you've completed the circuit.</p>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:22px 24px; margin-bottom:28px">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px 24px">
+          <div>
+            <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px">Runner</div>
+            <div style="font-family:var(--font-heading); font-size:15px">{{ formName }}</div>
+          </div>
+          <div>
+            <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px">Running for</div>
+            <div style="font-family:var(--font-heading); font-size:15px">{{ formCrewLabel }}</div>
+          </div>
+          <div>
+            <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px">Circuit</div>
+            <div style="font-family:var(--font-heading); font-size:15px">{{ confirmedCircuitName }}</div>
+          </div>
+          <div>
+            <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px">Challenge window</div>
+            <div style="font-family:var(--font-heading); font-size:15px">{{ confirmedWindow }}</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a href="RD1 Submit Result.dc.html" class="btn btn-primary">Go to Submit Result →</a>
+        <a href="RD1 My Results.dc.html" class="btn btn-secondary">View my results</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isForm }}" hint-placeholder-val="{{ true }}">
+    <div style="padding:56px 32px 24px; max-width:640px">
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">Season Zero</div>
+      <h1 style="font-size:38px; line-height:1.08; letter-spacing:-.02em; margin:0 0 14px">Register for a city circuit</h1>
+      <p class="text-muted" style="font-size:14px; line-height:1.6; margin:0">Pick your circuit, register with a crew, and you'll be ready to submit your run once the challenge window opens.</p>
+    </div>
+
+    <div style="padding:16px 32px 64px; display:grid; grid-template-columns:1fr 1.1fr; gap:48px">
+      <div>
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px">
+          <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Free to register, no entry fee</li>
+          <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> One circuit per registration — register again for another city</li>
+          <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Runners without a crew can register unattached</li>
+          <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> You'll upload your own GPS file to verify your time — no account linking required</li>
+        </ul>
+      </div>
+
+      <form style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:28px; display:flex; flex-direction:column; gap:16px" onSubmit="{{ onSubmit }}">
+        <div class="field">
+          <label>Full name</label>
+          <input class="input" type="text" placeholder="Jordan Blake" value="{{ formName }}" onChange="{{ onNameChange }}" required=""></input>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input class="input" type="email" placeholder="you@email.com" value="{{ formEmail }}" onChange="{{ onEmailChange }}" required=""></input>
+        </div>
+        <div class="field">
+          <label>Running for</label>
+          <select class="input" value="{{ formCrew }}" onChange="{{ onCrewChange }}">
+            <sc-for list="{{ crewOptions }}" as="c" hint-placeholder-count="11">
+              <option value="{{ c.id }}">{{ c.label }}</option>
+            </sc-for>
+          </select>
+        </div>
+        <div class="field">
+          <label>Circuit / round</label>
+          <select class="input" value="{{ formCircuit }}" onChange="{{ onCircuitChange }}">
+            <sc-for list="{{ circuitOptions }}" as="r" hint-placeholder-count="10">
+              <option value="{{ r.id }}">{{ r.label }}</option>
+            </sc-for>
+          </select>
+        </div>
+        <div class="field">
+          <label>Goal time (optional)</label>
+          <input class="input" type="text" placeholder="e.g. 22:00" value="{{ formGoal }}" onChange="{{ onGoalChange }}"></input>
+        </div>
+        <label style="display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:var(--color-neutral-400)">
+          <input type="checkbox" checked="{{ formAck }}" onChange="{{ onAckChange }}" required="" style="margin-top:2px"></input>
+          I agree to run the official circuit for my selected round and submit my own GPS activity file (GPX/FIT export) to RD1 for verification against the certified route.
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+      </form>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CIRCUITS = [
+  { id:'det', name:'WERUN313', city:'Detroit', window:'Oct 15–21' },
+  { id:'chi', name:'PEACE RUNNERS 773', city:'Chicago', window:'Oct 08–14' },
+  { id:'dc',  name:'District Running Collective', city:'Washington, DC', window:'Oct 01–07' },
+  { id:'la',  name:'KEEPITRUNHUNDRED', city:'Los Angeles', window:'Oct 22–28' },
+  { id:'mke', name:'FEAR MKE', city:'Milwaukee', window:'Oct 29–Nov 04' },
+  { id:'cvl', name:'PROLYFYCK RUN CREWW', city:'Charlottesville', window:'Nov 12–18' },
+  { id:'stl', name:'STL RUN CREW', city:'St. Louis', window:'Oct 15–21' },
+  { id:'nsh', name:'6RUN5', city:'Nashville', window:'Nov 05–11' },
+  { id:'bos', name:'PIONEERS RUN CREW', city:'Boston', window:'Nov 19–25' },
+  { id:'atl', name:'ATLANTA RUN CLUB', city:'Atlanta', window:'Oct 08–14' }
+];
+
+class Component extends DCLogic {
+  state = {
+    submitted: false,
+    name: '', email: '', crew: 'unattached', circuit: 'nsh', goal: '', ack: false
+  };
+
+  renderVals() {
+    const s = this.state;
+    const circuit = CIRCUITS.find(c => c.id === s.circuit) || CIRCUITS[0];
+    const crewOptions = [{ id:'unattached', label:'Unattached (no crew)' }, ...CIRCUITS.map(c => ({ id:c.id, label:c.name + ' — ' + c.city }))];
+    const crewLabel = crewOptions.find(c => c.id === s.crew)?.label || 'Unattached';
+    return {
+      isForm: !s.submitted,
+      isConfirmed: s.submitted,
+      crewOptions,
+      circuitOptions: CIRCUITS.map(c => ({ id:c.id, label:c.city + ' — ' + c.name + ' (' + c.window + ')' })),
+      formName: s.name, formEmail: s.email, formCrew: s.crew, formCircuit: s.circuit, formGoal: s.goal, formAck: s.ack,
+      formCrewLabel: crewLabel,
+      confirmedCircuitName: circuit.city,
+      confirmedWindow: circuit.window,
+      onNameChange: e => this.setState({ name: e.target.value }),
+      onEmailChange: e => this.setState({ email: e.target.value }),
+      onCrewChange: e => this.setState({ crew: e.target.value }),
+      onCircuitChange: e => this.setState({ circuit: e.target.value }),
+      onGoalChange: e => this.setState({ goal: e.target.value }),
+      onAckChange: e => this.setState({ ack: e.target.checked }),
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); }
+    };
+  }
+}
+
+</script>
+</body>
+</html>

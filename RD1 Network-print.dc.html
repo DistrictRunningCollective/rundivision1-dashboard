@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="omelette-print-source" content="v1787930955908394 RD1 Network.dc.html">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<script src="./doc-page.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+  doc-page:not(:defined) { visibility: hidden; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  * { animation-delay: -99s !important; animation-duration: .001s !important;
+      animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+      animation-play-state: running !important; transition-duration: 0s !important; }
+</style>
+</helmet>
+
+<doc-page margin="0.6in" style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body)">
+
+  <!-- hero -->
+  <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">The world's first run division</div>
+  <h1 style="font-size:40px; line-height:1.05; letter-spacing:-.03em; margin:0 0 16px">A new run order.</h1>
+  <p class="text-muted" style="font-size:14px; line-height:1.6; margin:0 0 20px; max-width:60ch">RunDivision is a member association, championship platform, and media ecosystem built for the independent organizations shaping running culture from the ground up.</p>
+
+  <!-- stat band -->
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); break-inside:avoid; margin-bottom:28px">
+    <div style="padding:16px 16px 16px 0">
+      <div style="font-family:var(--font-heading); font-size:26px; letter-spacing:-.02em">10</div>
+      <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Member crews</div>
+    </div>
+    <div style="padding:16px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:26px; letter-spacing:-.02em">10</div>
+      <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Cities represented</div>
+    </div>
+    <div style="padding:16px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:26px; letter-spacing:-.02em; color:var(--color-accent-300)">1,200+</div>
+      <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Runners in the network</div>
+    </div>
+    <div style="padding:16px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:26px; letter-spacing:-.02em; color:var(--color-accent-300)">$250K+</div>
+      <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">In grants + partnerships</div>
+    </div>
+  </div>
+
+  <!-- keep your identity -->
+  <div style="margin-bottom:28px; break-inside:avoid">
+    <h2 style="font-size:24px; line-height:1.2; margin:0 0 10px">Keep your identity. Gain infrastructure, access + leverage.</h2>
+    <p class="text-muted" style="font-size:13px; line-height:1.6; margin:0">Member organizations remain independently owned and operated. RunDivision creates the shared platform around them.</p>
+  </div>
+
+  <!-- founding crews -->
+  <div style="margin-bottom:28px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:8px">Who's already in</div>
+    <h2 style="font-size:26px; margin:0 0 14px">The founding crews</h2>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:10px">
+      <sc-for list="{{ crews }}" as="c" hint-placeholder-count="10">
+        <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:12px; break-inside:avoid">
+          <div style="font-family:var(--font-heading); font-size:12.5px; letter-spacing:-.01em; margin-bottom:2px">{{ c.name }}</div>
+          <div class="text-muted" style="font-size:10.5px">{{ c.city }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- testimonial -->
+  <div style="padding:24px 0; border-top:1px solid var(--color-divider); break-inside:avoid; margin-bottom:28px">
+    <div style="font-family:var(--font-heading); font-size:24px; line-height:1.3; letter-spacing:-.01em; max-width:60ch; margin-bottom:12px">"We built our crew from nothing. RunDivision gave us a grant, a national stage, and a reason to bring 200 more people out to run with us."</div>
+    <div style="font-size:13px; color:var(--color-neutral-300)">Founding member, Season Zero</div>
+  </div>
+
+  <!-- ecosystem -->
+  <div style="margin-bottom:28px; break-before:page">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:8px">The ecosystem</div>
+    <h2 style="font-size:26px; margin:0 0 8px">One platform. Three expressions.</h2>
+    <p class="text-muted" style="max-width:60ch; font-size:13px; margin:0 0 16px">RunDivision connects the year-round infrastructure crews need with a visible championship property and a media platform that tells the stories behind the movement.</p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px">
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:18px; background:var(--color-surface); break-inside:avoid">
+        <div style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:18px">01 / The Foundation</div>
+        <h3 style="font-size:17px; margin:0 0 8px">Member Association</h3>
+        <p class="text-muted" style="font-size:12px; line-height:1.55; margin:0">A formal affiliation for established community-led running organizations. Members gain shared infrastructure, collective opportunities, funding pathways, industry relationships, and a voice in shaping the network.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:18px; background:var(--color-surface); break-inside:avoid">
+        <div style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:18px">02 / The Stage</div>
+        <h3 style="font-size:17px; margin:0 0 8px">RunDivision Championships</h3>
+        <p class="text-muted" style="font-size:12px; line-height:1.55; margin:0">A national crew-first competition where member organizations represent their cities, compete as teams, earn points, and pursue the Performance Championship, Club Cup, and Impact Cup.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:18px; background:var(--color-surface); break-inside:avoid">
+        <div style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:18px">03 / The Story</div>
+        <h3 style="font-size:17px; margin:0 0 8px">RunDivision Studios</h3>
+        <p class="text-muted" style="font-size:12px; line-height:1.55; margin:0">Original storytelling around crews, athletes, cities, and community impact. The media platform extends RunDivision beyond race day and creates year-round value for members, partners, and audiences.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- why affiliate -->
+  <div style="margin-bottom:28px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:8px">Why affiliate?</div>
+    <h2 style="font-size:24px; margin:0 0 6px">Membership should create leverage.</h2>
+    <p class="text-muted" style="font-size:13px; max-width:60ch; margin:0 0 16px">RunDivision is not asking crews to give up what they built. The association exists to make things that are difficult alone more accessible together.</p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px">
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:14px; break-inside:avoid">
+        <div class="text-muted" style="font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px">01 · Funding</div>
+        <h4 style="font-size:14px; margin:0 0 5px">Paid Partnerships</h4>
+        <p class="text-muted" style="font-size:12px; line-height:1.5; margin:0">Access to national and multi-city brand opportunities negotiated through the collective scale of the network.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:14px; break-inside:avoid">
+        <div class="text-muted" style="font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px">02 · Capital</div>
+        <h4 style="font-size:14px; margin:0 0 5px">Member Grants</h4>
+        <p class="text-muted" style="font-size:12px; line-height:1.5; margin:0">Funding pathways for local programming, events, youth initiatives, travel, community impact, and organizational capacity.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:14px; break-inside:avoid">
+        <div class="text-muted" style="font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px">03 · Competition</div>
+        <h4 style="font-size:14px; margin:0 0 5px">Championship Access</h4>
+        <p class="text-muted" style="font-size:12px; line-height:1.5; margin:0">Only affiliated member organizations can compete for official RunDivision cup titles, season points, and the overall championship.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:14px; break-inside:avoid">
+        <div class="text-muted" style="font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px">04 · Infrastructure</div>
+        <h4 style="font-size:14px; margin:0 0 5px">Organizational Support</h4>
+        <p class="text-muted" style="font-size:12px; line-height:1.5; margin:0">Shared standards, operating tools, partnership guidance, safety resources, vendor information, and leadership development.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:14px; break-inside:avoid">
+        <div class="text-muted" style="font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px">05 · Influence</div>
+        <h4 style="font-size:14px; margin:0 0 5px">Collective Voice</h4>
+        <p class="text-muted" style="font-size:12px; line-height:1.5; margin:0">A seat in a larger conversation about how community-led running is funded, represented, supported, and developed.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:14px; break-inside:avoid">
+        <div class="text-muted" style="font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px">06 · Media</div>
+        <h4 style="font-size:14px; margin:0 0 5px">Amplification</h4>
+        <p class="text-muted" style="font-size:12px; line-height:1.5; margin:0">National visibility through RunDivision Studios, crew profiles, championship coverage, and original storytelling.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- how membership works -->
+  <div style="margin-bottom:28px; break-before:page">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:8px">Member affiliation</div>
+    <h2 style="font-size:26px; margin:0 0 8px">How membership works.</h2>
+    <p class="text-muted" style="font-size:13px; max-width:60ch; margin:0 0 20px">Crews join RunDivision as independent member organizations. Membership creates the year-round relationship; the Championships are one of its most visible benefits.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; border-top:1px solid var(--color-divider)">
+      <div style="padding:16px 12px 0 0; border-right:1px solid var(--color-divider); break-inside:avoid">
+        <div style="font-family:var(--font-heading); font-size:20px; color:var(--color-accent-300); margin:14px 0 10px">01</div>
+        <h4 style="font-size:13px; margin:0 0 6px">Apply as an organization</h4>
+        <p class="text-muted" style="font-size:11px; line-height:1.5; margin:0">Established crews provide organizational information, leadership contacts, programming details, and alignment with shared standards.</p>
+      </div>
+      <div style="padding:16px 12px 0 12px; border-right:1px solid var(--color-divider); break-inside:avoid">
+        <div style="font-family:var(--font-heading); font-size:20px; color:var(--color-accent-300); margin:14px 0 10px">02</div>
+        <h4 style="font-size:13px; margin:0 0 6px">Become an affiliated member</h4>
+        <p class="text-muted" style="font-size:11px; line-height:1.5; margin:0">The organization completes its annual membership agreement and financial or operational buy-in.</p>
+      </div>
+      <div style="padding:16px 12px 0 12px; border-right:1px solid var(--color-divider); break-inside:avoid">
+        <div style="font-family:var(--font-heading); font-size:20px; color:var(--color-accent-300); margin:14px 0 10px">03</div>
+        <h4 style="font-size:13px; margin:0 0 6px">Establish a championship roster</h4>
+        <p class="text-muted" style="font-size:11px; line-height:1.5; margin:0">Member crews submit one seasonal roster. Runners confirm a single RunDivision crew affiliation for competition.</p>
+      </div>
+      <div style="padding:16px 12px 0 12px; border-right:1px solid var(--color-divider); break-inside:avoid">
+        <div style="font-family:var(--font-heading); font-size:20px; color:var(--color-accent-300); margin:14px 0 10px">04</div>
+        <h4 style="font-size:13px; margin:0 0 6px">Activate the network</h4>
+        <p class="text-muted" style="font-size:11px; line-height:1.5; margin:0">Members participate in championships, partnerships, grants, leadership conversations, media, and shared initiatives.</p>
+      </div>
+      <div style="padding:16px 0 0 12px; break-inside:avoid">
+        <div style="font-family:var(--font-heading); font-size:20px; color:var(--color-accent-300); margin:14px 0 10px">05</div>
+        <h4 style="font-size:13px; margin:0 0 6px">Grow together</h4>
+        <p class="text-muted" style="font-size:11px; line-height:1.5; margin:0">Stronger organizations increase the reach, influence, and economic power of the entire RunDivision ecosystem.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- what stays yours -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:28px">
+    <div style="break-inside:avoid">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">What stays yours</div>
+      <h3 style="font-size:19px; margin:0 0 14px">Your crew stays your crew.</h3>
+      <div style="display:flex; flex-direction:column; gap:8px">
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px">Name and brand</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px">Local leadership</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px">Programming</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px">Membership structure</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px">Community relationships</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; border-bottom:1px solid var(--color-divider); padding-bottom:8px; font-size:12.5px">Independent ownership</div>
+      </div>
+    </div>
+    <div style="break-inside:avoid">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">What RunDivision adds</div>
+      <h3 style="font-size:19px; margin:0 0 14px">What you gain by joining.</h3>
+      <div style="display:flex; flex-direction:column; gap:8px">
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px; color:var(--color-accent-200)">National scale</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px; color:var(--color-accent-200)">Championship eligibility</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px; color:var(--color-accent-200)">Funding opportunities</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px; color:var(--color-accent-200)">Collective negotiating power</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; font-size:12.5px; color:var(--color-accent-200)">Media visibility</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:8px; border-bottom:1px solid var(--color-divider); padding-bottom:8px; font-size:12.5px; color:var(--color-accent-200)">Shared infrastructure</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- closing -->
+  <div style="padding-top:24px; border-top:1px solid var(--color-divider); break-inside:avoid">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">RunDivision · A New Run Order</div>
+    <h2 style="font-size:24px; margin:0">Independent locally. Stronger collectively.</h2>
+  </div>
+
+</doc-page>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CREWS = [
+  { id:'det', name:'WERUN313', city:'Detroit' },
+  { id:'chi', name:'PEACE RUNNERS 773', city:'Chicago' },
+  { id:'dc',  name:'District Running Collective', city:'Washington, DC' },
+  { id:'la',  name:'KEEPITRUNHUNDRED', city:'Los Angeles' },
+  { id:'mke', name:'FEAR MKE', city:'Milwaukee' },
+  { id:'cvl', name:'PROLYFYCK RUN CREWW', city:'Charlottesville' },
+  { id:'stl', name:'STL RUN CREW', city:'St. Louis' },
+  { id:'nsh', name:'6RUN5', city:'Nashville' },
+  { id:'bos', name:'PIONEERS RUN CREW', city:'Boston' },
+  { id:'atl', name:'ATLANTA RUN CLUB', city:'Atlanta' }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      crews: CREWS.map(c => ({ ...c, slotId: 'rd1net-crew-' + c.id, slotHint: c.name + ' \u2014 ' + c.city }))
+    };
+  }
+}
+</script>
+</body>
+</html>

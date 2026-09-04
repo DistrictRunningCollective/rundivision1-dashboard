@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #000000;
+    --color-surface: #151417;
+    --color-text: #f5f3f0;
+    --color-divider: rgba(245,243,240,.12);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+  }
+  body { background: #000; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+  .rd-shelf { display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 32px 14px; scrollbar-width:none; }
+  .rd-shelf::-webkit-scrollbar { display:none; }
+  .rd-pill { border-radius:999px; padding:11px 24px; font-size:14px; font-weight:500; text-decoration:none; white-space:nowrap; display:inline-flex; align-items:center; }
+</style>
+</helmet>
+
+<div style="background:#000; color:var(--color-text); font-family:var(--font-body); min-height:100%; font-family:-apple-system,'SF Pro Display',var(--font-body)">
+
+  <!-- nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:16px 32px; position:relative; z-index:2">
+    <dc-import name="RD1 Nav" active="studios" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- full-bleed hero, apple tv channel style -->
+  <div style="position:relative; height:64vh; min-height:480px; margin-top:-64px; overflow:hidden">
+    <div style="position:absolute; inset:0; overflow:hidden">
+      <image-slot id="rd1-studios-hero-bg" shape="rect" placeholder="Full-bleed: crew mid-run, cinematic, dark"></image-slot>
+    </div>
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.05) 40%, rgba(0,0,0,.75) 78%, #000 100%); pointer-events:none"></div>
+    <div style="position:absolute; inset:0 30% 0 0; background:linear-gradient(90deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 70%, transparent 100%); pointer-events:none"></div>
+    <div style="position:absolute; left:0; right:0; bottom:0; padding:0 48px 56px; max-width:760px">
+      <div style="display:inline-flex; align-items:center; gap:8px; margin-bottom:22px">
+        <span style="font-family:var(--font-heading); font-weight:600; font-size:12px; letter-spacing:.08em; color:var(--color-accent-200); border:1px solid var(--color-accent-500); border-radius:4px; padding:4px 9px; white-space:nowrap">RD1 STUDIOS</span>
+        <span class="text-muted" style="font-size:12px; letter-spacing:.05em">Original series · Season Zero</span>
+      </div>
+      <h1 style="font-size:60px; line-height:1.02; letter-spacing:-.03em; margin:0 0 18px; font-weight:600">The races are the backdrop.<br/>The crews are the story.</h1>
+      <p style="font-size:17px; line-height:1.55; margin:0 0 30px; max-width:52ch; color:var(--color-neutral-300)">Documenting the people, crews, and cities building running culture — year-round, not just on race day.</p>
+      <div style="display:flex; gap:12px">
+        <a href="#ecosystem" class="rd-pill" style="background:var(--color-text); color:#000">▶ Start watching</a>
+        <a href="RD1 Studios Crew Report.dc.html" class="rd-pill" style="background:rgba(120,120,128,.32); color:var(--color-text); backdrop-filter:blur(6px)">Latest report</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- content ecosystem shelf -->
+  <div id="ecosystem" style="padding-top:44px">
+    <div style="padding:0 32px; margin-bottom:16px">
+      <div style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:6px">Series</div>
+      <h2 style="font-size:26px; margin:0; font-weight:600; letter-spacing:-.01em">Six ways to tell the story</h2>
+    </div>
+    <div class="rd-shelf">
+      <sc-for list="{{ ecosystem }}" as="e" hint-placeholder-count="6">
+        <div style="flex:0 0 280px; scroll-snap-align:start; position:relative; height:400px; border-radius:16px; overflow:hidden" style-hover="transform:scale(1.02)">
+          <div class="lighten" style="position:absolute; inset:0">
+            <image-slot id="{{ e.slotId }}" shape="rect" placeholder="{{ e.slotHint }}"></image-slot>
+          </div>
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 45%, rgba(0,0,0,.9) 100%); pointer-events:none"></div>
+          <div style="position:absolute; left:0; right:0; bottom:0; padding:20px">
+            <div style="font-size:19px; font-weight:600; letter-spacing:-.01em; margin-bottom:6px">{{ e.title }}</div>
+            <p style="font-size:12.5px; line-height:1.45; margin:0 0 12px; color:var(--color-neutral-300)">{{ e.line }}</p>
+            <span style="font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent-300); border:1px solid rgba(255,90,36,.5); border-radius:999px; padding:4px 10px; display:inline-block">{{ e.tag }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- how to follow shelf -->
+  <div style="padding-top:44px; padding-bottom:64px">
+    <div style="padding:0 32px; margin-bottom:16px">
+      <div style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:6px">Where to watch</div>
+      <h2 style="font-size:26px; margin:0 0 6px; font-weight:600; letter-spacing:-.01em">Pick your cadence</h2>
+      <p class="text-muted" style="font-size:14px; margin:0; max-width:56ch">The same stories move at four speeds, from a daily scroll to something you sit down for once a year.</p>
+    </div>
+    <div class="rd-shelf">
+      <sc-for list="{{ pyramid }}" as="p" hint-placeholder-count="4">
+        <div style="flex:0 0 240px; scroll-snap-align:start; border-radius:16px; background:var(--color-surface); border:1px solid var(--color-divider); padding:26px 22px; display:flex; flex-direction:column; gap:18px; min-height:190px">
+          <div style="font-size:24px; font-weight:600; letter-spacing:-.01em; color:var(--color-text)">{{ p.tier }}</div>
+          <div class="text-muted" style="font-size:12.5px; line-height:1.4">{{ p.purpose }}</div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:auto">
+            <sc-for list="{{ p.channels }}" as="c" hint-placeholder-count="3">
+              <span style="font-size:11px; color:var(--color-neutral-300); border:1px solid var(--color-divider); border-radius:999px; padding:4px 10px">{{ c }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- cta -->
+  <div style="padding:0 32px 64px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; border-top:1px solid var(--color-divider); padding-top:40px">
+    <div>
+      <h2 style="font-size:22px; margin:0 0 6px; font-weight:600">Read the first crew report</h2>
+      <p class="text-muted" style="font-size:14px; margin:0">PEACE RUNNERS 773's Comprehensive Impact Report — Community Stories in practice.</p>
+    </div>
+    <a href="RD1 Studios Crew Report.dc.html" class="rd-pill" style="background:var(--color-text); color:#000">Read the report →</a>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const ECOSYSTEM = [
+  { title:'Crew Stories', line:'The flagship series — following crews through a season of runs, recruiting, and growth.', tag:'Weekly', slotId:'rd1-studios-crew', slotHint:'Crew Stories — behind the scenes' },
+  { title:'Athlete Stories', line:'Everyday runners with extraordinary journeys. The focus is transformation, not winning.', tag:'Weekly', slotId:'rd1-studios-athlete', slotHint:'Athlete Stories — a runner\u2019s journey' },
+  { title:'City Stories', line:'Every circuit city gets an episode — its crews, food, music, and running routes.', tag:'Seasonal', slotId:'rd1-studios-city', slotHint:'City Stories — a circuit city profile' },
+  { title:'Championship Coverage', line:'Broadcasts, highlight films, and team introductions from race day itself.', tag:'Live', slotId:'rd1-studios-champ', slotHint:'Championship Coverage — race day' },
+  { title:'The Build-Up', line:'Training camps, travel days, and predictions leading into every championship weekend.', tag:'Seasonal', slotId:'rd1-studios-buildup', slotHint:'The Build-Up — before the race' },
+  { title:'Community Stories', line:'Youth mentorship, food drives, and local advocacy — the impact beyond the race.', tag:'Monthly', slotId:'rd1-studios-community', slotHint:'Community Stories — impact beyond running' }
+];
+
+const PYRAMID = [
+  { tier:'Daily', purpose:'A quick scroll to stay close to the crews.', channels:['Instagram','TikTok','Shorts'] },
+  { tier:'Weekly', purpose:'Sit-down episodes and interviews.', channels:['YouTube','Podcast','Spotlights'] },
+  { tier:'Seasonal', purpose:'Premium storytelling around Season Zero.', channels:['Docuseries','BTS specials'] },
+  { tier:'Annual', purpose:'The stories worth keeping.', channels:['Documentary','Awards show','Yearbook'] }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return { ecosystem: ECOSYSTEM, pyramid: PYRAMID };
+  }
+}
+
+</script>
+</body>
+</html>

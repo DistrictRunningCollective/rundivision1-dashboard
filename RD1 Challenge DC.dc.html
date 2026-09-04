@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+<template id="__bundler_thumbnail" data-bg-color="#0a0a0b">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <rect width="200" height="200" fill="#0a0a0b"/>
+    <text x="100" y="115" font-family="system-ui, sans-serif" font-size="46" font-weight="600" fill="#ff6a35" text-anchor="middle">RD1</text>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <!-- nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="circuits" cta-label="Apply to join" cta-href="RD1 Season Zero.dc.html" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- hero -->
+  <div style="display:grid; grid-template-columns:1.2fr .9fr; gap:48px; padding:56px 32px 48px; align-items:start; background:radial-gradient(120% 90% at 88% 0%, rgba(255,90,36,.18), transparent 62%)">
+    <div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+        <span style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400)">RD1 / DC / 008</span>
+        <span class="tag tag-neutral" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase">Complete</span>
+      </div>
+      <h1 style="font-size:52px; line-height:1.02; letter-spacing:-.03em; margin:0 0 16px; max-width:18ch">Washington, DC — City Day results</h1>
+      <p class="text-muted" style="font-size:16px; line-height:1.6; max-width:54ch; margin:0 0 26px">Hosted by District Running Collective on Nov 22. 121 of 143 registered runners finished the 5K circuit inside the challenge window.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a href="RD1 Season Zero.dc.html" class="btn btn-primary" style="white-space:nowrap">See season standings</a>
+        <a href="https://www.strava.com/routes/3497347317822393586" target="_blank" class="btn btn-secondary" style="white-space:nowrap">View route on Strava ↗</a>
+      </div>
+    </div>
+    <div class="lighten" style="position:relative; height:340px; border-radius:var(--radius-lg); overflow:hidden">
+      <image-slot id="rd1chal-hero" shape="rect" placeholder="Hero: District Running Collective crew crossing the finish, City Day"></image-slot>
+    </div>
+  </div>
+
+  <!-- stat band -->
+  <div style="display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider)">
+    <div style="padding:24px 28px">
+      <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em">121</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Finishers of 143</div>
+    </div>
+    <div style="padding:24px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em">85%</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Completion rate</div>
+    </div>
+    <div style="padding:24px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em">16:42</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Winning time</div>
+    </div>
+    <div style="padding:24px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em">24:10</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Median time</div>
+    </div>
+    <div style="padding:24px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em; color:var(--color-accent-300)">110 ft</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Elevation gain</div>
+    </div>
+  </div>
+
+  <!-- podium -->
+  <div style="padding:56px 32px 0">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Top finishers</div>
+    <h2 style="font-size:30px; margin:0 0 24px">The podium</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px">
+      <div style="border:1px solid var(--color-accent-700); border-radius:var(--radius-md); background:linear-gradient(160deg, rgba(255,90,36,.10), var(--color-surface)); padding:22px 22px 20px; order:2">
+        <div style="font-family:var(--font-heading); font-size:13px; color:var(--color-accent-300); letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px">1st</div>
+        <div style="font-family:var(--font-heading); font-size:24px; letter-spacing:-.01em; margin-bottom:4px">Marcus Iyer</div>
+        <div class="text-muted" style="font-size:13px; margin-bottom:14px">District Running Collective</div>
+        <div style="font-family:var(--font-heading); font-size:30px; color:var(--color-accent-300)">16:42</div>
+        <div class="text-muted" style="font-size:12px">5:22 / mi</div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:22px 22px 20px; order:1">
+        <div style="font-family:var(--font-heading); font-size:13px; color:var(--color-neutral-400); letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px">2nd</div>
+        <div style="font-family:var(--font-heading); font-size:24px; letter-spacing:-.01em; margin-bottom:4px">Priya Chandran</div>
+        <div class="text-muted" style="font-size:13px; margin-bottom:14px">District Running Collective</div>
+        <div style="font-family:var(--font-heading); font-size:30px">16:58</div>
+        <div class="text-muted" style="font-size:12px">5:28 / mi</div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:22px 22px 20px; order:3">
+        <div style="font-family:var(--font-heading); font-size:13px; color:var(--color-neutral-400); letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px">3rd</div>
+        <div style="font-family:var(--font-heading); font-size:24px; letter-spacing:-.01em; margin-bottom:4px">Devon Ashe</div>
+        <div class="text-muted" style="font-size:13px; margin-bottom:14px">District Running Collective</div>
+        <div style="font-family:var(--font-heading); font-size:30px">17:21</div>
+        <div class="text-muted" style="font-size:12px">5:35 / mi</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- results table -->
+  <div style="padding:36px 32px 56px">
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); overflow:hidden">
+      <div style="display:grid; grid-template-columns:64px 1.6fr 1fr 1fr; gap:16px; padding:12px 20px; background:var(--color-surface); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500)">
+        <div>Pos</div><div>Runner</div><div>Time</div><div style="text-align:right">Pace / mi</div>
+      </div>
+      <div style="display:grid; grid-template-columns:64px 1.6fr 1fr 1fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">4</div><div style="font-size:14px">Sam Okafor</div><div style="font-size:14px">17:44</div><div style="text-align:right; font-size:13px; color:var(--color-neutral-400)">5:43</div>
+      </div>
+      <div style="display:grid; grid-template-columns:64px 1.6fr 1fr 1fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">5</div><div style="font-size:14px">Lena Vasquez</div><div style="font-size:14px">18:03</div><div style="text-align:right; font-size:13px; color:var(--color-neutral-400)">5:49</div>
+      </div>
+      <div style="display:grid; grid-template-columns:64px 1.6fr 1fr 1fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">6</div><div style="font-size:14px">Theo Marsh</div><div style="font-size:14px">18:29</div><div style="text-align:right; font-size:13px; color:var(--color-neutral-400)">5:57</div>
+      </div>
+      <div style="display:grid; grid-template-columns:64px 1.6fr 1fr 1fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">7</div><div style="font-size:14px">Adaeze Nwosu</div><div style="font-size:14px">19:12</div><div style="text-align:right; font-size:13px; color:var(--color-neutral-400)">6:11</div>
+      </div>
+      <div style="display:grid; grid-template-columns:64px 1.6fr 1fr 1fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">8</div><div style="font-size:14px">Ravi Sethi</div><div style="font-size:14px">19:47</div><div style="text-align:right; font-size:13px; color:var(--color-neutral-400)">6:22</div>
+      </div>
+      <div style="padding:12px 20px; border-top:1px solid var(--color-divider); text-align:center">
+        <span class="text-muted" style="font-size:12px">113 more finishers not shown</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- host crew -->
+  <div style="padding:56px 32px 0; display:grid; grid-template-columns:.95fr 1.05fr; gap:48px; align-items:center">
+    <div class="lighten" style="position:relative; height:320px; border-radius:var(--radius-lg); overflow:hidden">
+      <image-slot id="rd1chal-crew" shape="rect" placeholder="District Running Collective crew portrait, Capitol Hill"></image-slot>
+    </div>
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Your host crew</div>
+      <h2 style="font-size:30px; margin:0 0 14px">District Running Collective hosted City Day</h2>
+      <p class="text-muted" style="font-size:15px; line-height:1.6; max-width:52ch; margin:0 0 22px">District Running Collective built and mapped the DC circuit — the streets, the finish, the route standard. Every runner above registered through their roster for Season Zero.</p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; border-top:1px solid var(--color-divider); padding-top:18px">
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Founded</div>
+          <div style="font-family:var(--font-heading); font-size:18px">2017</div>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Members</div>
+          <div style="font-family:var(--font-heading); font-size:18px">310+</div>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Home turf</div>
+          <div style="font-family:var(--font-heading); font-size:18px">Capitol Hill</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- pod leaderboard -->
+  <div style="padding:56px 32px 56px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">District Running Collective by the numbers</div>
+    <h2 style="font-size:30px; margin:0 0 6px">Pod leaderboard</h2>
+    <p class="text-muted" style="font-size:14px; max-width:56ch; margin:0 0 24px">District Running Collective trains in five neighborhood pods year-round. Here's how each showed up for City Day.</p>
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); overflow:hidden">
+      <div style="display:grid; grid-template-columns:1.4fr .8fr .8fr 1fr 1.2fr; gap:16px; padding:12px 20px; background:var(--color-surface); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500)">
+        <div>Pod</div><div>Finishers</div><div>Share</div><div>Avg time</div><div>Fastest runner</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.4fr .8fr .8fr 1fr 1.2fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-size:14px">Capitol Hill</div><div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">34</div><div style="font-size:13px; color:var(--color-neutral-400)">28%</div><div style="font-size:14px">21:40</div><div style="font-size:13px; color:var(--color-neutral-400)">Marcus Iyer · 16:42</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.4fr .8fr .8fr 1fr 1.2fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-size:14px">NoMa</div><div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">28</div><div style="font-size:13px; color:var(--color-neutral-400)">23%</div><div style="font-size:14px">22:15</div><div style="font-size:13px; color:var(--color-neutral-400)">Priya Chandran · 16:58</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.4fr .8fr .8fr 1fr 1.2fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-size:14px">Petworth</div><div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">26</div><div style="font-size:13px; color:var(--color-neutral-400)">21%</div><div style="font-size:14px">23:02</div><div style="font-size:13px; color:var(--color-neutral-400)">Sam Okafor · 17:44</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.4fr .8fr .8fr 1fr 1.2fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-size:14px">Shaw</div><div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">19</div><div style="font-size:13px; color:var(--color-neutral-400)">16%</div><div style="font-size:14px">24:40</div><div style="font-size:13px; color:var(--color-neutral-400)">Theo Marsh · 18:29</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.4fr .8fr .8fr 1fr 1.2fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+        <div style="font-size:14px">Anacostia</div><div style="font-family:var(--font-heading); font-size:16px; color:var(--color-accent-300)">14</div><div style="font-size:13px; color:var(--color-neutral-400)">12%</div><div style="font-size:14px">25:10</div><div style="font-size:13px; color:var(--color-neutral-400)">Adaeze Nwosu · 19:12</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- photo gallery -->
+  <div style="padding:0 32px 56px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">On the course</div>
+    <h2 style="font-size:30px; margin:0 0 24px">City Day, in pictures</h2>
+    <div class="lighten" style="display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(2,200px); gap:14px">
+      <div style="grid-column:span 2; grid-row:span 2; position:relative; border-radius:var(--radius-md); overflow:hidden">
+        <image-slot id="rd1chal-gal-1" shape="rect" placeholder="Pre-race huddle at the start line"></image-slot>
+      </div>
+      <div style="position:relative; border-radius:var(--radius-md); overflow:hidden">
+        <image-slot id="rd1chal-gal-2" shape="rect" placeholder="Mile 1, crowd on the move"></image-slot>
+      </div>
+      <div style="position:relative; border-radius:var(--radius-md); overflow:hidden">
+        <image-slot id="rd1chal-gal-3" shape="rect" placeholder="Volunteer water stop"></image-slot>
+      </div>
+      <div style="position:relative; border-radius:var(--radius-md); overflow:hidden">
+        <image-slot id="rd1chal-gal-4" shape="rect" placeholder="Sprint to the finish"></image-slot>
+      </div>
+      <div style="position:relative; border-radius:var(--radius-md); overflow:hidden">
+        <image-slot id="rd1chal-gal-5" shape="rect" placeholder="Post-race brunch"></image-slot>
+      </div>
+    </div>
+  </div>
+
+  <!-- route map + elevation -->
+  <div style="padding:0 32px 56px; display:grid; grid-template-columns:1fr; gap:16px">
+    <div style="display:flex; justify-content:space-between; align-items:end; gap:24px">
+      <h2 style="font-size:30px; margin:0">The route</h2>
+      <span class="text-muted" style="font-size:13px">Selected and mapped by District Running Collective · <a href="https://www.strava.com/routes/3497347317822393586" target="_blank">strava.com/routes/3497347317822393586</a></span>
+    </div>
+
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); overflow:hidden; position:relative; min-height:420px; background:radial-gradient(circle at 62% 40%, rgba(255,90,36,.18), transparent 48%), linear-gradient(150deg, var(--color-surface), var(--color-bg))">
+      <svg viewBox="0 0 960 640" preserveAspectRatio="xMidYMid meet" style="width:100%; height:420px; display:block">
+        <defs>
+          <linearGradient id="rd1cRouteGrad" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#e0331f"></stop>
+            <stop offset="0.55" stop-color="#ff5a24"></stop>
+            <stop offset="1" stop-color="#ff9d2f"></stop>
+          </linearGradient>
+        </defs>
+        <g stroke="rgba(242,239,236,.06)" stroke-width="1">
+          <line x1="0" y1="106" x2="960" y2="106"></line>
+          <line x1="0" y1="212" x2="960" y2="212"></line>
+          <line x1="0" y1="318" x2="960" y2="318"></line>
+          <line x1="0" y1="424" x2="960" y2="424"></line>
+          <line x1="0" y1="530" x2="960" y2="530"></line>
+          <line x1="137" y1="0" x2="137" y2="640"></line>
+          <line x1="274" y1="0" x2="274" y2="640"></line>
+          <line x1="411" y1="0" x2="411" y2="640"></line>
+          <line x1="548" y1="0" x2="548" y2="640"></line>
+          <line x1="685" y1="0" x2="685" y2="640"></line>
+          <line x1="822" y1="0" x2="822" y2="640"></line>
+        </g>
+        <path fill="none" stroke="url(#rd1cRouteGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M642.3 138.8 L 619.6 161.8 L 589.5 215.7 L 586.4 213.1 L 540.2 187.4 L 516.2 175.1 L 495.3 164.9 L 454.5 143.2 L 418.4 124.3 L 403.9 114.7 L 367 94.2 L 322.8 70 L 318.6 72.2 L 322.8 78 L 321.7 97.2 L 322.4 132.1 L 323 168.2 L 323.4 188.5 L 324.2 197.2 L 323.7 198.6 L 322.8 202.2 L 323.4 226.2 L 323.4 254.4 L 322.8 260.9 L 322.8 260.9 L 321.4 292.5 L 321.4 349.3 L 320.6 358 L 321.7 367.8 L 321.9 397.2 L 321.7 449.3 L 322.2 452.2 L 318.6 459.1 L 318.6 518.8 L 317.7 552.2 L 343.4 562 L 349.9 563.8 L 354.4 570 L 357.8 566.4 L 356.9 554.8 L 364 524 L 368.8 505.9 L 366.5 504.1 L 375.2 475 L 388.5 427.6 L 401.5 399.7 L 404 386.3 L 403.2 374.3 L 403.7 366.7 L 404 329.8 L 406.8 326.9 L 411.1 320 L 411.1 264.9 L 408.8 260.6 L 411.3 259.9 L 455.6 259.9 L 487.5 260.9 L 512 260.2 L 517.6 259.9 L 563.7 260.1 L 583.9 259.9 L 583.6 220.7 L 587.3 221.1 L 604.6 188.7 L 634.7 134.9 L 642.3 138.8"></path>
+        <circle cx="642.3" cy="138.8" r="10" style="fill:var(--color-accent-400)"></circle>
+      </svg>
+      <div style="position:absolute; left:22px; bottom:18px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500)">Start / finish</div>
+    </div>
+
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:20px 24px">
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:12px">Elevation profile</div>
+      <svg viewBox="0 0 900 140" preserveAspectRatio="none" style="width:100%; height:100px; display:block">
+        <path fill="none" stroke="var(--color-accent-400)" stroke-width="2.5" stroke-linejoin="round" d="M0,0 L 14,17 L 28,41 L 42,41 L 56,65 L 70,76 L 84,80 L 98,73 L 112,72 L 126,69 L 140,61 L 153,54 L 167,52 L 181,57 L 195,68 L 209,81 L 223,81 L 237,78 L 251,77 L 265,77 L 279,77 L 293,80 L 307,85 L 321,85 L 335,86 L 349,105 L 363,126 L 377,130 L 391,132 L 405,133 L 419,137 L 433,137 L 447,138 L 460,134 L 474,115 L 488,94 L 502,89 L 516,86 L 530,84 L 544,83 L 558,116 L 572,128 L 586,129 L 600,133 L 614,131 L 628,129 L 642,125 L 656,124 L 670,125 L 684,121 L 698,120 L 712,119 L 726,111 L 740,111 L 753,111 L 767,105 L 781,99 L 795,87 L 809,84 L 823,61 L 837,58 L 851,43 L 865,42 L 879,28 L 893,4"></path>
+      </svg>
+      <div style="display:flex; justify-content:space-between; margin-top:6px">
+        <span class="text-muted" style="font-size:11px">9 ft</span>
+        <span class="text-muted" style="font-size:11px">29 ft elevation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- full-bleed band -->
+  <div class="lighten" style="height:320px; position:relative; border-top:1px solid var(--color-divider)">
+    <image-slot id="rd1chal-band" shape="rect" placeholder="Full-bleed: the DC circuit finish line"></image-slot>
+  </div>
+
+  <!-- scoring earned -->
+  <div style="padding:56px 32px; display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; gap:20px">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">Points earned this round</div>
+      <h2 style="font-size:28px; margin:0 0 12px; max-width:16ch">What District Running Collective scored on City Day.</h2>
+      <p class="text-muted" style="font-size:13px; line-height:1.6; max-width:36ch; margin:0">Adds to District Running Collective's running season total across all eight rounds.</p>
+    </div>
+    <div style="border-top:2px solid var(--color-accent-500); padding-top:16px">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500); margin-bottom:8px">Performance Championship</div>
+      <div style="font-family:var(--font-heading); font-size:28px; margin-bottom:4px">+14 pts</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">District Running Collective's fastest 3 verified times ranked on the division-wide board.</p>
+    </div>
+    <div style="border-top:2px solid var(--color-accent-500); padding-top:16px">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500); margin-bottom:8px">Club Cup</div>
+      <div style="font-family:var(--font-heading); font-size:28px; margin-bottom:4px">+17 pts</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">85% of registered runners finished — 121 of 143.</p>
+    </div>
+    <div style="border-top:2px solid var(--color-accent-500); padding-top:16px">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500); margin-bottom:8px">Impact Cup</div>
+      <div style="font-family:var(--font-heading); font-size:28px; margin-bottom:4px">+9 pts</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Community programming District Running Collective ran around City Day.</p>
+    </div>
+  </div>
+
+  <!-- close -->
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:32px; padding:44px 32px; background:var(--color-surface); border-top:1px solid var(--color-divider)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">RD1 / DC / 008 · Complete</div>
+      <h2 style="font-size:32px; margin:0; max-width:18ch">See where this puts District Running Collective in the standings.</h2>
+    </div>
+    <div style="display:flex; gap:10px; flex-shrink:0">
+      <a href="RD1 Season Zero.dc.html" class="btn btn-primary" style="white-space:nowrap; flex-shrink:0">Season standings</a>
+      <a href="https://www.strava.com/routes/3497347317822393586" target="_blank" class="btn btn-secondary" style="white-space:nowrap; flex-shrink:0">Get the GPX on Strava</a>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

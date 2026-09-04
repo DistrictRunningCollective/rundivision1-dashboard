@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <!-- nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="circuits" cta-label="Register now" cta-href="#register" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- hero -->
+  <div style="display:grid; grid-template-columns:1.2fr .9fr; gap:48px; padding:56px 32px 48px; align-items:start; background:radial-gradient(120% 90% at 88% 0%, rgba(255,90,36,.18), transparent 62%)">
+    <div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+        <span style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400)">RD1 / NSH / 006</span>
+        <span class="tag tag-accent" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase">Registration open</span>
+      </div>
+      <h1 style="font-size:52px; line-height:1.02; letter-spacing:-.03em; margin:0 0 16px; max-width:18ch">Nashville — City Day registration</h1>
+      <p class="text-muted" style="font-size:16px; line-height:1.6; max-width:54ch; margin:0 0 26px">Hosted by 6RUN5. Run the official Nashville 5K circuit anytime during the challenge window, Nov 05–11, with City Day gathering runs on Nov 08.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a href="#register" class="btn btn-primary" style="white-space:nowrap">Register now</a>
+        <a href="#route" class="btn btn-secondary" style="white-space:nowrap">View the route</a>
+        <a href="RD1 Submit Result.dc.html" class="btn btn-ghost" style="white-space:nowrap">Submit your result</a>
+      </div>
+    </div>
+    <div class="lighten" style="position:relative; height:340px; border-radius:var(--radius-lg); overflow:hidden">
+      <image-slot id="rd1nsh-hero" shape="rect" placeholder="Hero: 6RUN5 crew training run, Nashville"></image-slot>
+    </div>
+  </div>
+
+  <!-- stat band -->
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider)">
+    <div style="padding:24px 28px">
+      <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em">86</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Registered so far</div>
+    </div>
+    <div style="padding:24px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em; color:var(--color-accent-300)">5K</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">City circuit distance</div>
+    </div>
+    <div style="padding:24px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em">Nov 03</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Registration closes</div>
+    </div>
+    <div style="padding:24px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em">Nov 08</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">City Day</div>
+    </div>
+  </div>
+
+  <!-- challenge window timeline -->
+  <div style="padding:56px 32px 0">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">How the round works</div>
+    <h2 style="font-size:30px; margin:0 0 28px">The challenge window</h2>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:14px">
+      <div style="border-top:2px solid var(--color-accent-500); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Now</div>
+        <div style="font-family:var(--font-heading); font-size:18px; margin-bottom:4px">Registration open</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Sign up with 6RUN5 and pick your goal for Nashville.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-divider); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Nov 03</div>
+        <div style="font-family:var(--font-heading); font-size:18px; margin-bottom:4px">Registration closes</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Late entries aren't scored for this round.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-divider); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Nov 05–11</div>
+        <div style="font-family:var(--font-heading); font-size:18px; margin-bottom:4px">Challenge window</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Run the official circuit any day in this window. GPS activity verifies the time.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-divider); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Nov 08</div>
+        <div style="font-family:var(--font-heading); font-size:18px; margin-bottom:4px">City Day</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">6RUN5 gathers runners for a group run on the circuit, aid stations staffed.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-divider); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Nov 13</div>
+        <div style="font-family:var(--font-heading); font-size:18px; margin-bottom:4px">Results posted</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Verified times and points go up on the season standings.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- live status -->
+  <div style="padding:56px 32px 0">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px">
+      <span style="width:7px; height:7px; border-radius:50%; background:var(--color-accent-400); box-shadow:0 0 0 3px rgba(255,90,36,.18)"></span>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400)">Live · challenge window in progress</div>
+    </div>
+    <h2 style="font-size:26px; margin:0 0 20px">Nashville right now</h2>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:14px">
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:20px 24px">
+        <div style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em">86</div>
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Registered</div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:20px 24px">
+        <div style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em">41</div>
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Submitted so far</div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:20px 24px">
+        <div style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em; color:#5fbf8f">36</div>
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Verified so far</div>
+      </div>
+    </div>
+    <p class="text-muted" style="font-size:12.5px; margin:0">Standings update automatically as results clear verification — no need to wait for the window to close.</p>
+  </div>
+
+  <!-- submit result band -->
+  <div style="padding:28px 32px 0">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; border:1px solid var(--color-accent-700); border-radius:var(--radius-lg); background:linear-gradient(100deg, rgba(255,157,47,.10), rgba(255,90,36,.06) 52%, rgba(224,51,31,.03)); padding:26px 28px">
+      <div style="min-width:280px; flex:1">
+        <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:8px">Already run it?</div>
+        <h3 style="font-family:var(--font-heading); font-size:22px; letter-spacing:-.01em; margin:0 0 8px">Submit your result</h3>
+        <p class="text-muted" style="font-size:13.5px; line-height:1.6; margin:0; max-width:56ch">Upload a GPX or FIT file from Strava, Garmin, or Apple Watch. RD1 matches your track against the certified Nashville circuit — most results verify within a few hours.</p>
+      </div>
+      <div style="display:flex; gap:10px; flex-shrink:0">
+        <a href="RD1 Submit Result.dc.html" class="btn btn-primary" style="white-space:nowrap">Submit result →</a>
+        <a href="RD1 My Results.dc.html" class="btn btn-ghost" style="white-space:nowrap">My results</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- host crew -->
+  <div style="padding:56px 32px 0; display:grid; grid-template-columns:.95fr 1.05fr; gap:48px; align-items:center">
+    <div class="lighten" style="position:relative; height:320px; border-radius:var(--radius-lg); overflow:hidden">
+      <image-slot id="rd1nsh-crew" shape="rect" placeholder="6RUN5 crew portrait, East Nashville"></image-slot>
+    </div>
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Your host crew</div>
+      <h2 style="font-size:30px; margin:0 0 14px">Run with 6RUN5</h2>
+      <p class="text-muted" style="font-size:15px; line-height:1.6; max-width:52ch; margin:0 0 22px">6RUN5 built and mapped the Nashville circuit — the streets, the finish, the route standard. Registering here puts you on their roster for Season Zero.</p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; border-top:1px solid var(--color-divider); padding-top:18px">
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Founded</div>
+          <div style="font-family:var(--font-heading); font-size:18px">2019</div>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Members</div>
+          <div style="font-family:var(--font-heading); font-size:18px">240+</div>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Home turf</div>
+          <div style="font-family:var(--font-heading); font-size:18px">East Nashville</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- route -->
+  <div id="route" style="padding:56px 32px 56px; display:grid; grid-template-columns:1fr; gap:16px">
+    <div style="display:flex; justify-content:space-between; align-items:end; gap:24px">
+      <h2 style="font-size:30px; margin:0">The route</h2>
+      <span class="text-muted" style="font-size:13px">Selected and mapped by 6RUN5 · <a href="#route">GPX available after registration</a></span>
+    </div>
+
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); overflow:hidden; position:relative; min-height:340px; background:radial-gradient(circle at 62% 40%, rgba(255,90,36,.18), transparent 48%), linear-gradient(150deg, var(--color-surface), var(--color-bg))">
+      <svg viewBox="0 0 700 420" preserveAspectRatio="xMidYMid meet" style="width:100%; height:340px; display:block">
+        <defs>
+          <linearGradient id="rd1nshRouteGrad" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#e0331f"></stop>
+            <stop offset="0.55" stop-color="#ff5a24"></stop>
+            <stop offset="1" stop-color="#ff9d2f"></stop>
+          </linearGradient>
+        </defs>
+        <g stroke="rgba(242,239,236,.06)" stroke-width="1">
+          <line x1="0" y1="70" x2="700" y2="70"></line>
+          <line x1="0" y1="140" x2="700" y2="140"></line>
+          <line x1="0" y1="210" x2="700" y2="210"></line>
+          <line x1="0" y1="280" x2="700" y2="280"></line>
+          <line x1="0" y1="350" x2="700" y2="350"></line>
+          <line x1="100" y1="0" x2="100" y2="420"></line>
+          <line x1="200" y1="0" x2="200" y2="420"></line>
+          <line x1="300" y1="0" x2="300" y2="420"></line>
+          <line x1="400" y1="0" x2="400" y2="420"></line>
+          <line x1="500" y1="0" x2="500" y2="420"></line>
+          <line x1="600" y1="0" x2="600" y2="420"></line>
+        </g>
+        <path fill="none" stroke="url(#rd1nshRouteGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M100 330 C155 290 170 225 235 225 C300 225 285 140 365 145 C445 150 450 85 525 105 C595 123 620 195 565 235 C510 275 445 250 415 315 C380 380 275 340 225 315 C180 292 135 370 100 330"></path>
+        <circle cx="100" cy="330" r="9" style="fill:var(--color-accent-400)"></circle>
+      </svg>
+      <div style="position:absolute; left:22px; bottom:18px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500)">Start / finish</div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px">
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:16px 20px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px">Distance</div>
+        <div style="font-family:var(--font-heading); font-size:18px">5K</div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:16px 20px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px">Elevation gain</div>
+        <div style="font-family:var(--font-heading); font-size:18px">140 ft</div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:16px 20px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px">Surface</div>
+        <div style="font-family:var(--font-heading); font-size:18px">Road</div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:16px 20px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px">Aid stations</div>
+        <div style="font-family:var(--font-heading); font-size:18px">1, mile 1.5</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- full-bleed band -->
+  <div class="lighten" style="height:300px; position:relative; border-top:1px solid var(--color-divider)">
+    <image-slot id="rd1nsh-band" shape="rect" placeholder="Full-bleed: East Nashville streets, 6RUN5 route"></image-slot>
+  </div>
+
+  <!-- points at stake -->
+  <div style="padding:56px 32px; display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; gap:20px; border-bottom:1px solid var(--color-divider)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">What's on the line</div>
+      <h2 style="font-size:28px; margin:0 0 12px; max-width:16ch">Points at stake for 6RUN5.</h2>
+      <p class="text-muted" style="font-size:13px; line-height:1.6; max-width:36ch; margin:0">Every registered runner adds to 6RUN5's shot at all three Season Zero cups.</p>
+    </div>
+    <div style="border-top:2px solid var(--color-accent-500); padding-top:16px">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500); margin-bottom:8px">Performance Championship</div>
+      <div style="font-family:var(--font-heading); font-size:22px; margin-bottom:4px">Up to 10 pts</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">6RUN5's fastest 3 verified times, ranked division-wide.</p>
+    </div>
+    <div style="border-top:2px solid var(--color-accent-500); padding-top:16px">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500); margin-bottom:8px">Club Cup</div>
+      <div style="font-family:var(--font-heading); font-size:22px; margin-bottom:4px">Up to 10 pts</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Awarded for finishers under 6RUN5's approved circuit standard.</p>
+    </div>
+    <div style="border-top:2px solid var(--color-accent-500); padding-top:16px">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500); margin-bottom:8px">Impact Cup</div>
+      <div style="font-family:var(--font-heading); font-size:22px; margin-bottom:4px">Up to 4 pts</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Judged on community programming built around City Day.</p>
+    </div>
+  </div>
+
+  <!-- registration form -->
+  <div id="register" style="padding:56px 32px; display:grid; grid-template-columns:1fr 1fr; gap:56px">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Sign up</div>
+      <h2 style="font-size:32px; margin:0 0 14px; max-width:16ch">Register for Nashville</h2>
+      <p class="text-muted" style="font-size:14px; line-height:1.6; max-width:44ch; margin:0 0 20px">You'll run on your own during the challenge window, or join the 6RUN5 group run on City Day. Bring a GPS watch or phone app — Strava, Garmin, or Apple Watch all verify.</p>
+      <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px">
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Open to any RD1 crew member or new runner</li>
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Free to register, no entry fee</li>
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> GPS activity required to verify your time</li>
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Runners without a crew can register unattached</li>
+      </ul>
+    </div>
+    <form style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:28px; display:flex; flex-direction:column; gap:16px" onSubmit="{{ onSubmit }}">
+      <div class="field">
+        <label>Full name</label>
+        <input class="input" type="text" placeholder="Jordan Blake" required=""></input>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input class="input" type="email" placeholder="you@email.com" required=""></input>
+      </div>
+      <div class="field">
+        <label>Running for</label>
+        <select class="input">
+          <option>6RUN5 (host crew)</option>
+          <option>Another RD1 crew</option>
+          <option>Unattached</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Goal time (optional)</label>
+        <input class="input" type="text" placeholder="e.g. 22:00"></input>
+      </div>
+      <label style="display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:var(--color-neutral-400)">
+        <input type="checkbox" required="" style="margin-top:2px"></input>
+        I agree to run the official 6RUN5 circuit during the challenge window and share my verified activity with RD1.
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">{{ submitLabel }}</button>
+      <sc-if value="{{ submitted }}">
+        <p style="font-size:12.5px; color:var(--color-accent-300); margin:0">You're on the roster. Watch for the route GPX and 6RUN5's City Day details by email.</p>
+      </sc-if>
+    </form>
+  </div>
+
+  <!-- faq -->
+  <div style="padding:0 32px 56px; border-top:1px solid var(--color-divider); padding-top:48px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Before you sign up</div>
+    <h2 style="font-size:30px; margin:0 0 24px">Questions, answered</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px 48px; max-width:1000px">
+      <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="6">
+        <div>
+          <div style="font-family:var(--font-heading); font-size:16px; margin-bottom:6px">{{ q.q }}</div>
+          <p class="text-muted" style="font-size:13.5px; line-height:1.6; margin:0">{{ q.a }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- close -->
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:32px; padding:44px 32px; background:var(--color-surface); border-top:1px solid var(--color-divider)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">RD1 / NSH / 006 · Registration open</div>
+      <h2 style="font-size:32px; margin:0; max-width:18ch">Run Nashville. Represent 6RUN5.</h2>
+    </div>
+    <div style="display:flex; gap:10px; flex-shrink:0">
+      <a href="#register" class="btn btn-primary" style="white-space:nowrap; flex-shrink:0">Register now</a>
+      <a href="RD1 Season Zero.dc.html" class="btn btn-secondary" style="white-space:nowrap; flex-shrink:0">Back to Season Zero</a>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const FAQS = [
+  { q:'Do I need to be a 6RUN5 member to register?', a:'No. Any RD1 crew member can register for Nashville, and unattached runners are welcome too — you\u2019ll just register as unattached.' },
+  { q:'What counts as a verified time?', a:'A GPS-tracked activity on the official route, recorded during the Nov 05\u201311 challenge window, on Strava, Garmin, or a comparable app.' },
+  { q:'Do I have to run on City Day itself?', a:'No. City Day (Nov 08) is when 6RUN5 hosts a group run with aid stations staffed, but any day in the window counts for scoring.' },
+  { q:'Is there a fee to register?', a:'Registration for Season Zero city circuits is free.' },
+  { q:'What if I miss the registration deadline?', a:'Late entries can still run the route, but times won\u2019t be scored for this round\u2019s points.' },
+  { q:'Where do I get the official route file?', a:'A GPX download and turn-by-turn cues are emailed to every registered runner ahead of the challenge window.' }
+];
+
+class Component extends DCLogic {
+  state = { submitted: false };
+  renderVals() {
+    return {
+      faqs: FAQS,
+      submitted: this.state.submitted,
+      submitLabel: this.state.submitted ? 'Registered' : 'Register for Nashville',
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

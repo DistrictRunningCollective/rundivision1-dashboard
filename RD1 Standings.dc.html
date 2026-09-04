@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <!-- nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="standings" cta-label="Apply to join" cta-href="RD1 Season Zero.dc.html" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- hero -->
+  <div style="display:flex; justify-content:space-between; align-items:end; gap:40px; padding:48px 32px 32px; flex-wrap:wrap">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">Season Zero</div>
+      <h1 style="font-size:44px; letter-spacing:-.03em; margin:0 0 10px">Standings</h1>
+      <p class="text-muted" style="font-size:15px; max-width:52ch; margin:0">5 of 10 city circuits complete. Three cups run in parallel across every round — the overall champion is the crew that carries all three.</p>
+    </div>
+    <div style="display:flex; gap:6px">
+      <sc-for list="{{ roundDots }}" as="r" hint-placeholder-count="10">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+          <span style="width:9px; height:9px; border-radius:50%; background:{{ r.color }}; display:inline-block"></span>
+          <span class="text-muted" style="font-size:10px; letter-spacing:.06em">{{ r.code }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- cup tabs + leader -->
+  <div style="padding:0 32px 32px; display:flex; justify-content:space-between; align-items:end; gap:24px; flex-wrap:wrap">
+    <div style="display:flex; gap:8px">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+        <button onClick="{{ t.onClick }}" class="btn" style="border:1px solid {{ t.border }}; background:{{ t.bg }}; color:{{ t.fg }}; font-size:13px; padding:8px 16px; white-space:nowrap">{{ t.label }}</button>
+      </sc-for>
+    </div>
+    <div style="text-align:right">
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">{{ cupTitle }} leader</div>
+      <div style="font-family:var(--font-heading); font-size:22px; margin-top:2px; white-space:nowrap">{{ leaderName }}</div>
+      <div style="font-size:13px; color:var(--color-accent-300)">{{ leaderCity }} · {{ leaderPts }} pts</div>
+    </div>
+  </div>
+
+  <p class="text-muted" style="padding:0 32px 8px; font-size:14px; max-width:64ch; margin:0">{{ cupBlurb }}</p>
+  <p class="text-muted" style="padding:0 32px 28px; font-size:13px; max-width:64ch; margin:0">Each round column below is that crew's {{ colLabel }} for that city's circuit — a crew's rank in each cup converts to points on the same scale, then adds in. The Total column sums all five completed rounds and sets the {{ cupTitle }} order; switch cups above to see the same five rounds scored a different way. <a href="RD1 Scoring.dc.html">Full scoring breakdown →</a></p>
+
+  <!-- how it's scored -->
+  <div style="padding:0 32px 40px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px">
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:20px; background:var(--color-surface)">
+      <div style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Performance Championship</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">A crew's fastest 3 verified times, ranked against every other crew's on one division-wide leaderboard — not scored per city.</p>
+    </div>
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:20px; background:var(--color-surface)">
+      <div style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Club Cup</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Most runners finishing under the crew's own published circuit standard — a raw count, not a share of the roster.</p>
+    </div>
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:20px; background:var(--color-surface)">
+      <div style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Impact Cup</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">RD1 judges score each crew's documented programming, partnerships and storytelling — not a formula.</p>
+    </div>
+  </div>
+
+  <!-- table -->
+  <div style="padding:0 32px 56px">
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); overflow:hidden">
+      <div style="display:grid; grid-template-columns:52px 1.7fr 1.1fr repeat(5,64px) 84px; gap:12px; padding:12px 20px; background:var(--color-surface); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--color-neutral-500)">
+        <div>Pos</div><div>Crew</div><div>City</div>
+        <div style="text-align:center">MKE</div><div style="text-align:center">STL</div><div style="text-align:center">DET</div><div style="text-align:center">CHI</div><div style="text-align:center">DC</div>
+        <div style="text-align:right">{{ colLabel }}</div>
+      </div>
+      <sc-for list="{{ rows }}" as="row" hint-placeholder-count="10">
+        <div style="display:grid; grid-template-columns:52px 1.7fr 1.1fr repeat(5,64px) 84px; gap:12px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center; background:{{ row.bg }}">
+          <div style="font-family:var(--font-heading); font-size:17px; color:{{ row.posColor }}">{{ row.pos }}</div>
+          <div style="font-size:14px; font-weight:500">{{ row.name }}</div>
+          <div style="font-size:13px; color:var(--color-neutral-400)">{{ row.city }}</div>
+          <div style="text-align:center; font-size:13px; color:var(--color-neutral-400)">{{ row.r0 }}</div>
+          <div style="text-align:center; font-size:13px; color:var(--color-neutral-400)">{{ row.r1 }}</div>
+          <div style="text-align:center; font-size:13px; color:var(--color-neutral-400)">{{ row.r2 }}</div>
+          <div style="text-align:center; font-size:13px; color:var(--color-neutral-400)">{{ row.r3 }}</div>
+          <div style="text-align:center; font-size:13px; color:var(--color-neutral-400)">{{ row.r4 }}</div>
+          <div style="text-align:right; font-family:var(--font-heading); font-size:18px; color:var(--color-accent-300)">{{ row.total }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- completed rounds recap -->
+  <div style="padding:0 32px 56px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Rounds so far</div>
+    <h2 style="font-size:28px; margin:0 0 20px">5 circuits complete</h2>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:14px">
+      <sc-for list="{{ completed }}" as="c" hint-placeholder-count="5">
+        <a href="{{ c.link }}" style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:18px 18px 16px; text-decoration:none; color:var(--color-text); display:block" style-hover="border-color:var(--color-accent-700)">
+          <div style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">RD1 / {{ c.code }}</div>
+          <div style="font-family:var(--font-heading); font-size:19px; margin-bottom:4px">{{ c.city }}</div>
+          <div class="text-muted" style="font-size:12px; margin-bottom:14px">Hosted by {{ c.host }} · {{ c.date }}</div>
+          <div style="font-size:12px; color:var(--color-neutral-400)">{{ c.finishers }} finishers</div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:32px; padding:44px 32px; background:var(--color-surface); border-top:1px solid var(--color-divider)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">Season Zero</div>
+      <h2 style="font-size:28px; margin:0; max-width:20ch">5 rounds down, 5 to go.</h2>
+    </div>
+    <a href="RD1 Season Zero.dc.html" class="btn btn-primary" style="white-space:nowrap; flex-shrink:0">Back to dashboard</a>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CREWS = [
+  { id:'det', name:'WERUN313', city:'Detroit', champ:86, club:72, impact:64 },
+  { id:'chi', name:'PEACE RUNNERS 773', city:'Chicago', champ:78, club:81, impact:70 },
+  { id:'dc',  name:'District Running Collective', city:'Washington, DC', champ:69, club:75, impact:81 },
+  { id:'la',  name:'KEEPITRUNHUNDRED', city:'Los Angeles', champ:74, club:66, impact:58 },
+  { id:'mke', name:'FEAR MKE', city:'Milwaukee', champ:61, club:70, impact:52 },
+  { id:'cvl', name:'PROLYFYCK RUN CREWW', city:'Charlottesville', champ:58, club:54, impact:76 },
+  { id:'stl', name:'STL RUN CREW', city:'St. Louis', champ:52, club:60, impact:48 },
+  { id:'nsh', name:'6RUN5', city:'Nashville', champ:47, club:58, impact:44 },
+  { id:'bos', name:'PIONEERS RUN CREW', city:'Boston', champ:44, club:50, impact:41 },
+  { id:'atl', name:'ATLANTA RUN CLUB', city:'Atlanta', champ:40, club:46, impact:38 }
+];
+
+const COMPLETED = [
+  { code:'MKE', city:'Milwaukee', host:'FEAR MKE', date:'Sep 20', finishers:74, link:'RD1 Season Zero.dc.html' },
+  { code:'STL', city:'St. Louis', host:'STL RUN CREW', date:'Sep 27', finishers:63, link:'RD1 Season Zero.dc.html' },
+  { code:'DET', city:'Detroit', host:'WERUN313', date:'Oct 11', finishers:127, link:'RD1 Season Zero.dc.html' },
+  { code:'CHI', city:'Chicago', host:'PEACE RUNNERS 773', date:'Oct 18', finishers:88, link:'RD1 Season Zero.dc.html' },
+  { code:'DC', city:'Washington, DC', host:'District Running Collective', date:'Nov 22', finishers:121, link:'RD1 Challenge DC.dc.html' }
+];
+
+const CUPS = {
+  overall:      { label:'Overall', key:'total',  title:'Overall standings', blurb:'Every point a crew has scored across the five completed rounds, summed across all three cups. The overall champion is decided here.' },
+  championship: { label:'Performance Championship', key:'champ',  title:'Performance Championship', blurb:'A crew\u2019s fastest 3 verified times, ranked against every other crew on one division-wide board \u2014 not scored per city.' },
+  club:         { label:'Club Cup', key:'club',   title:'Club Cup', blurb:'The crew with the most runners finishing under its own published circuit standard.' },
+  impact:       { label:'Impact Cup', key:'impact', title:'Impact Cup', blurb:'Judged by RD1: programming, partnerships and storytelling documented around the circuit.' }
+};
+
+class Component extends DCLogic {
+  state = { cup: 'overall' };
+
+  splitRound(total, seed, n) {
+    let s = seed, weights = [];
+    for (let i = 0; i < n; i++) { s = (s * 9301 + 49297) % 233280; weights.push(0.55 + s / 233280); }
+    const sumW = weights.reduce((a, b) => a + b, 0);
+    const vals = weights.map(w => Math.round(total * w / sumW));
+    vals[vals.length - 1] += total - vals.reduce((a, b) => a + b, 0);
+    return vals;
+  }
+
+  renderVals() {
+    const { cup } = this.state;
+    const withTotals = CREWS.map(c => ({ ...c, total: c.champ + c.club + c.impact }));
+    const key = CUPS[cup].key;
+    const sorted = [...withTotals].sort((a, b) => b[key] - a[key]);
+    const leader = sorted[0];
+
+    const tabs = Object.keys(CUPS).map(k => {
+      const on = k === cup;
+      return {
+        label: CUPS[k].label,
+        onClick: () => this.setState({ cup: k }),
+        border: on ? 'var(--color-accent-500)' : 'var(--color-divider)',
+        bg: on ? 'rgba(255,90,36,.12)' : 'transparent',
+        fg: on ? 'var(--color-accent-200)' : 'var(--color-neutral-400)'
+      };
+    });
+
+    const rows = sorted.map((c, i) => {
+      const seed = c.id.charCodeAt(0) + c.id.charCodeAt(1) + (c.id.charCodeAt(2) || 0);
+      const splits = this.splitRound(c[key], seed, 5);
+      return {
+        pos: i + 1, name: c.name, city: c.city,
+        r0: splits[0], r1: splits[1], r2: splits[2], r3: splits[3], r4: splits[4],
+        total: c[key],
+        bg: i === 0 ? 'rgba(255,90,36,.08)' : 'transparent',
+        posColor: i === 0 ? 'var(--color-accent-300)' : 'var(--color-neutral-500)'
+      };
+    });
+
+    return {
+      tabs, rows,
+      cupTitle: CUPS[cup].title,
+      cupBlurb: CUPS[cup].blurb,
+      colLabel: cup === 'overall' ? 'Total' : 'Cup pts',
+      leaderName: leader.name,
+      leaderCity: leader.city,
+      leaderPts: leader[key],
+      completed: COMPLETED,
+      roundDots: ['MKE','STL','DET','CHI','LA','NSH','CVL','DC','BOS','ATL'].map(code => ({
+        code,
+        color: COMPLETED.some(c => c.code === code) ? 'var(--color-accent-400)' : 'var(--color-neutral-700)'
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>

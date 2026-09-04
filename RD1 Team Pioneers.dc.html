@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="teams" cta-label="Apply to join" cta-href="RD1 Network.dc.html#join" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- hero -->
+  <div style="display:grid; grid-template-columns:.9fr 1.1fr; gap:0; border-bottom:1px solid var(--color-divider); align-items:stretch">
+    <div class="lighten" style="position:relative; height:100%; min-height:460px">
+      <image-slot id="rd1team-bos-hero" shape="rect" placeholder="Pioneers Run Crew portrait, Dorchester"></image-slot>
+    </div>
+    <div style="padding:44px 48px; display:flex; flex-direction:column; justify-content:center">
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">RD1 team profile</div>
+      <h1 style="font-size:44px; line-height:1.02; letter-spacing:-.03em; margin:0 0 8px">Pioneers Run Crew</h1>
+      <div class="text-muted" style="font-size:15px; margin-bottom:18px">Boston, MA · Founded 2017</div>
+      <p class="text-muted" style="font-size:14.5px; line-height:1.55; max-width:48ch; margin:0 0 22px">Pioneers Run Crew is a Dorchester-based run crew, representing Boston across every round of Season Zero.</p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; border-top:1px solid var(--color-divider); padding-top:16px; max-width:420px">
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Founded</div>
+          <div style="font-family:var(--font-heading); font-size:18px">2017</div>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Members</div>
+          <div style="font-family:var(--font-heading); font-size:18px">150+</div>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Home turf</div>
+          <div style="font-family:var(--font-heading); font-size:18px">Dorchester</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- crew profile -->
+  <div style="padding:48px 32px; border-bottom:1px solid var(--color-divider); display:grid; grid-template-columns:1fr 1fr; gap:40px">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Crew profile</div>
+      <h2 style="font-size:24px; margin:0 0 20px">Who runs Pioneers Run Crew</h2>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px">
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Founder</div>
+          <div style="font-family:var(--font-heading); font-size:17px">Sid Baptista</div>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Meetup spot</div>
+          <div style="font-family:var(--font-heading); font-size:17px">Franklin Park</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:transparent; margin-bottom:10px" aria-hidden="true">Spacer</div>
+      <h2 style="font-size:24px; margin:0 0 20px">Weekly runs</h2>
+      <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:18px; max-width:360px">
+        <div style="display:flex; justify-content:space-between; font-size:14px"><span>Wednesday</span><span class="text-muted">6:30 PM · Easy 4-miler</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:14px"><span>Sunday</span><span class="text-muted">8:00 AM · Long run</span></div>
+      </div>
+      <div style="display:flex; gap:14px; font-size:13px">
+        <a href="#" target="_blank">Instagram ↗</a>
+        <a href="#" target="_blank">Strava club ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- championship snapshot -->
+  <div style="padding:48px 32px; border-bottom:1px solid var(--color-divider)">
+    <div style="display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:20px; flex-wrap:wrap">
+      <div>
+        <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Season Zero standing</div>
+        <h2 style="font-size:26px; margin:0">Championship snapshot</h2>
+      </div>
+      <a href="RD1 Standings.dc.html" style="font-size:13px">Full standings →</a>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px">
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:22px 24px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px">Performance Championship</div>
+        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px">
+          <span style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em">44</span>
+          <span class="text-muted" style="font-size:13px">pts</span>
+        </div>
+        <div class="text-muted" style="font-size:12.5px">9th of 10 teams</div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:22px 24px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px">Club Cup</div>
+        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px">
+          <span style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em">50</span>
+          <span class="text-muted" style="font-size:13px">pts</span>
+        </div>
+        <div class="text-muted" style="font-size:12.5px">9th of 10 teams</div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:22px 24px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px">Impact Cup</div>
+        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px">
+          <span style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em">41</span>
+          <span class="text-muted" style="font-size:13px">pts</span>
+        </div>
+        <div class="text-muted" style="font-size:12.5px">9th of 10 teams</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- circuit status -->
+  <div style="padding:48px 32px; border-bottom:1px solid var(--color-divider); display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">City circuit</div>
+      <h2 style="font-size:24px; margin:0 0 8px">Boston circuit not yet scheduled</h2>
+      <p class="text-muted" style="font-size:14px; margin:0; max-width:56ch">Pioneers Run Crew is registered for Season Zero; a City Day date for the Boston circuit hasn't been set.</p>
+    </div>
+    <a href="RD1 Season Zero.dc.html#circuits" class="btn btn-secondary" style="white-space:nowrap">View all circuits →</a>
+  </div>
+
+  <!-- crew stories -->
+  <div style="padding:48px 32px 64px">
+    <div style="display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:20px; flex-wrap:wrap">
+      <div>
+        <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">RD1 Studios</div>
+        <h2 style="font-size:26px; margin:0">Crew stories</h2>
+      </div>
+      <a href="RD1 Studios.dc.html" style="font-size:13px">All of RD1 Studios →</a>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px">
+      <sc-for list="{{ stories }}" as="s" hint-placeholder-count="3">
+        <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); overflow:hidden">
+          <div class="lighten" style="position:relative; height:160px; border-bottom:1px solid var(--color-divider)">
+            <image-slot id="{{ s.slotId }}" shape="rect" placeholder="{{ s.slotHint }}"></image-slot>
+          </div>
+          <div style="padding:18px 20px 20px">
+            <span style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--color-accent-300); border:1px solid rgba(255,90,36,.5); border-radius:999px; padding:3px 9px; display:inline-block; margin-bottom:10px">{{ s.tag }}</span>
+            <div style="font-family:var(--font-heading); font-size:16px; margin-bottom:6px">{{ s.title }}</div>
+            <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">{{ s.line }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const STORIES = [
+  { title:'Coming soon', line:'RD1 Studios has not yet filmed a Crew Stories episode with Pioneers Run Crew.', tag:'Awaiting production', slotId:'rd1team-bos-story-1', slotHint:'RD1 Studios episode still' },
+  { title:'Coming soon', line:'Reserved for an Athlete Stories or City Stories feature.', tag:'Awaiting production', slotId:'rd1team-bos-story-2', slotHint:'RD1 Studios episode still' },
+  { title:'Coming soon', line:'Reserved for Championship Coverage from a future City Day.', tag:'Awaiting production', slotId:'rd1team-bos-story-3', slotHint:'RD1 Studios episode still' }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return { stories: STORIES };
+  }
+}
+</script>
+</body>
+</html>

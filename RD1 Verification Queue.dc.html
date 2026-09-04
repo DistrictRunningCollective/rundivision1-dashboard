@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --color-success: #5fbf8f; --color-success-tint: rgba(95,191,143,.12);
+    --color-warn: #e0a83e; --color-warn-tint: rgba(224,168,62,.12);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+  .rd1vq-row:hover { background: var(--color-neutral-900); }
+  .rd1vq-chip { font-size:11.5px; padding:5px 12px; border-radius:999px; border:1px solid var(--color-divider); color:var(--color-neutral-400); cursor:pointer; white-space:nowrap; }
+  .rd1vq-chip.active { border-color:var(--color-accent-600); color:var(--color-accent-300); background:rgba(255,90,36,.08); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%; font-size:13px">
+
+  <!-- internal top bar -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:9px 24px; background:var(--color-warn-tint); border-bottom:1px solid var(--color-divider)">
+    <div style="display:flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--color-warn)">
+      <span>⚠</span> RD1 Internal — staff access only
+    </div>
+    <div class="text-muted" style="font-size:11px">Logged in as staff@rundivision.org</div>
+  </div>
+
+  <!-- app header -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 24px; border-bottom:1px solid var(--color-divider)">
+    <div style="display:flex; align-items:center; gap:10px">
+      <span style="font-family:var(--font-heading); font-weight:600; font-size:12px; letter-spacing:.06em; color:var(--color-accent-300); border:1px solid var(--color-accent-700); border-radius:4px; padding:3px 7px">RD1</span>
+      <span style="font-family:var(--font-heading); font-weight:500; font-size:13px">Verification Queue</span>
+    </div>
+    <div style="display:flex; gap:18px; font-size:12.5px; color:var(--color-neutral-500)">
+      <a href="#" style="color:var(--color-text)">Queue</a>
+      <a href="#">Certified routes</a>
+      <a href="#">Crews</a>
+      <a href="#">Audit log</a>
+    </div>
+  </div>
+
+  <div style="padding:24px 24px 0; display:flex; align-items:end; justify-content:space-between; gap:24px; flex-wrap:wrap">
+    <div>
+      <h1 style="font-size:22px; margin:0 0 4px; font-weight:500">Pending submissions</h1>
+      <div class="text-muted" style="font-size:12px">{{ pendingCount }} awaiting review · updated moments ago</div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+        <div class="rd1vq-chip {{ f.activeClass }}" onClick="{{ f.onClick }}">{{ f.label }}</div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:16px 24px 48px">
+    <table class="table" style="width:100%; font-size:12.5px">
+      <thead>
+        <tr>
+          <th style="width:28px"></th>
+          <th>Runner</th><th>Crew</th><th>Circuit</th><th>Submitted</th><th>File</th><th>Route match</th><th style="text-align:right">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ rows }}" as="r" hint-placeholder-count="8">
+          <tr class="rd1vq-row">
+            <td><input type="checkbox"></input></td>
+            <td style="font-family:var(--font-heading); font-weight:500">{{ r.runner }}</td>
+            <td class="text-muted">{{ r.crew }}</td>
+            <td class="text-muted">{{ r.circuit }}</td>
+            <td class="text-muted">{{ r.submitted }}</td>
+            <td class="text-muted">{{ r.file }}</td>
+            <td>
+              <div style="display:flex; align-items:center; gap:8px">
+                <div style="width:56px; height:5px; border-radius:3px; background:var(--color-neutral-800); overflow:hidden">
+                  <div style="height:100%; width:{{ r.matchWidth }}; background:{{ r.matchColor }}"></div>
+                </div>
+                <span style="color:{{ r.matchColor }}; font-family:var(--font-heading); font-size:12px">{{ r.matchLabel }}</span>
+              </div>
+            </td>
+            <td style="text-align:right">
+              <div style="display:flex; gap:6px; justify-content:flex-end">
+                <button type="button" class="btn btn-secondary" style="padding:5px 11px; font-size:11.5px">Approve</button>
+                <button type="button" class="btn btn-ghost" style="padding:5px 11px; font-size:11.5px; color:var(--color-warn)">Flag</button>
+              </div>
+            </td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const ROWS = [
+  { runner:'M. Solis', crew:'District Running Collective', circuit:'Washington, DC', submitted:'2 min ago', file:'m_solis_912.fit', match:99.2, flag:false },
+  { runner:'R. Alavi', crew:'District Running Collective', circuit:'Washington, DC', submitted:'11 min ago', file:'ralavi_dc.gpx', match:97.8, flag:false },
+  { runner:'K. Boone', crew:'FEAR MKE', circuit:'Milwaukee', submitted:'26 min ago', file:'boone_run.fit', match:61.4, flag:true },
+  { runner:'S. Higgins', crew:'PEACE RUNNERS 773', circuit:'Chicago', submitted:'34 min ago', file:'higgins_chi.gpx', match:95.0, flag:false },
+  { runner:'D. Marsh', crew:'STL RUN CREW', circuit:'St. Louis', submitted:'1 hr ago', file:'dmarsh_stl.fit', match:88.3, flag:false },
+  { runner:'A. Ferreira', crew:'WERUN313', circuit:'Detroit', submitted:'1 hr ago', file:'screenshot.png', match:0, flag:true },
+  { runner:'T. Vance', crew:'WERUN313', circuit:'Detroit', submitted:'2 hr ago', file:'tvance_det.gpx', match:99.6, flag:false },
+  { runner:'J. Okafor', crew:'PEACE RUNNERS 773', circuit:'Chicago', submitted:'3 hr ago', file:'okafor_chi.fit', match:72.1, flag:true }
+];
+
+const FILTERS = ['All', 'Needs attention', 'Manual entries', 'DC', 'Nashville'];
+
+class Component extends DCLogic {
+  state = { filter: 'All' };
+  renderVals() {
+    const s = this.state;
+    let rows = ROWS;
+    if (s.filter === 'Needs attention') rows = ROWS.filter(r => r.flag);
+    if (s.filter === 'Manual entries') rows = ROWS.filter(r => r.file.endsWith('.png'));
+    if (s.filter === 'DC') rows = ROWS.filter(r => r.circuit === 'Washington, DC');
+    if (s.filter === 'Nashville') rows = ROWS.filter(r => r.circuit === 'Nashville');
+    return {
+      pendingCount: ROWS.length,
+      filters: FILTERS.map(f => ({ label: f, activeClass: f === s.filter ? 'active' : '', onClick: () => this.setState({ filter: f }) })),
+      rows: rows.map(r => ({
+        ...r,
+        matchWidth: Math.max(r.match, 4) + '%',
+        matchColor: r.match === 0 ? 'var(--color-neutral-600)' : r.match < 85 ? 'var(--color-warn)' : 'var(--color-success)',
+        matchLabel: r.match === 0 ? 'n/a' : r.match.toFixed(1) + '%'
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>

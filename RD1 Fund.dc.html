@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <!-- nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="fund" cta-label="Enter your crew" cta-href="#apply" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- hero -->
+  <div style="display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; padding:72px 32px 56px; background:radial-gradient(90% 100% at 15% 0%, rgba(255,90,36,.20), transparent 62%)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:20px">Season Zero Community Fund</div>
+      <h1 style="font-size:54px; line-height:1.03; letter-spacing:-.03em; margin:0 0 22px; max-width:16ch">Built by crews. Funded to move.</h1>
+      <p class="text-muted" style="font-size:17px; line-height:1.6; margin:0 0 28px; max-width:52ch">Season Zero begins with a direct investment in the run crews building culture, access, and community from the ground up.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a href="#apply" class="btn btn-primary" style="white-space:nowrap">Enter your crew</a>
+        <a href="#tracker" class="btn btn-secondary" style="white-space:nowrap">View fund tracker</a>
+      </div>
+    </div>
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-lg); background:var(--color-surface); padding:28px">
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px">Target community investment</div>
+      <div style="font-family:var(--font-heading); font-size:48px; letter-spacing:-.02em; background:var(--rd-grad); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:14px">$10K</div>
+      <p class="text-muted" style="font-size:13px; line-height:1.55; margin:0">Funding for crew-led programs, events, infrastructure, travel, storytelling, and community impact.</p>
+    </div>
+  </div>
+
+  <!-- concept + stats -->
+  <div style="padding:56px 32px; border-top:1px solid var(--color-divider)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">The concept</div>
+    <h2 style="font-size:32px; margin:0 0 14px; max-width:22ch">A fund connected to participation.</h2>
+    <p class="text-muted" style="font-size:15px; line-height:1.6; max-width:62ch; margin:0 0 32px">The Community Fund is part of the RD1 Season Zero launch. Crews enter the network, build a verified profile, participate in Season Zero, and become eligible to apply for funding that advances running in their city.</p>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--color-divider); border-radius:var(--radius-md); overflow:hidden; margin-bottom:20px">
+      <div style="padding:22px 26px">
+        <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em">12</div>
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Crews entered</div>
+      </div>
+      <div style="padding:22px 26px; border-left:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em">9</div>
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Cities represented</div>
+      </div>
+      <div style="padding:22px 26px; border-left:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em; color:var(--color-accent-300)">1,850+</div>
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Combined community reach</div>
+      </div>
+      <div style="padding:22px 26px; border-left:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading); font-size:32px; letter-spacing:-.02em; color:var(--color-accent-300)">$0</div>
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Funding secured</div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:22px 26px">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px">
+        <div style="font-size:13px; color:var(--color-neutral-300)">Community Fund Partner Goal</div>
+        <div style="font-family:var(--font-heading); font-size:16px">$0 <span class="text-muted" style="font-size:13px; font-family:var(--font-body)">of $10,000 secured</span></div>
+      </div>
+      <div style="height:8px; border-radius:99px; background:var(--color-neutral-800); overflow:hidden; margin-bottom:10px">
+        <div style="height:100%; width:0%; background:var(--rd-grad); border-radius:99px"></div>
+      </div>
+      <div class="text-muted" style="font-size:12px">Founding partner outreach underway · 0% funded</div>
+    </div>
+  </div>
+
+  <!-- 4 lanes -->
+  <div style="padding:56px 32px; border-top:1px solid var(--color-divider)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">What funding covers</div>
+    <h2 style="font-size:32px; margin:0 0 28px">Build. Move. Impact. Tell.</h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px">
+      <div style="border-top:2px solid var(--color-accent-500); padding-top:14px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">01 · Build</div>
+        <h4 style="font-size:16px; margin:0 0 6px">Build</h4>
+        <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Equipment, storage, staffing, technology, and operating infrastructure.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-accent-500); padding-top:14px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">02 · Move</div>
+        <h4 style="font-size:16px; margin:0 0 6px">Move</h4>
+        <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Training programs, races, athlete travel, and community activations.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-accent-500); padding-top:14px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">03 · Impact</div>
+        <h4 style="font-size:16px; margin:0 0 6px">Impact</h4>
+        <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Youth access, wellness programs, volunteer work, and neighborhood initiatives.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-accent-500); padding-top:14px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">04 · Tell</div>
+        <h4 style="font-size:16px; margin:0 0 6px">Tell</h4>
+        <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Film, photography, archives, media, and local running culture storytelling.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- grant tiers -->
+  <div style="padding:56px 32px; border-top:1px solid var(--color-divider)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Proposed awards</div>
+    <h2 style="font-size:32px; margin:0 0 28px">Four grants. One shared fund.</h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px">
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:24px">
+        <div style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em; color:var(--color-accent-300); margin-bottom:10px">$5,000</div>
+        <h4 style="font-size:15px; margin:0 0 8px">Season Zero Community Grant</h4>
+        <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">A major crew-led initiative with a clear plan, local need, and measurable impact.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:24px">
+        <div style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em; color:var(--color-accent-300); margin-bottom:10px">$2,500</div>
+        <h4 style="font-size:15px; margin:0 0 8px">Emerging Crew Grant</h4>
+        <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Support for a growth-stage crew or a crew working in an under-resourced market.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:24px">
+        <div style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em; color:var(--color-accent-300); margin-bottom:10px">$1,500</div>
+        <h4 style="font-size:15px; margin:0 0 8px">Activation Grant</h4>
+        <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Funding for a race, community program, training experience, or local event.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:24px">
+        <div style="font-family:var(--font-heading); font-size:30px; letter-spacing:-.02em; color:var(--color-accent-300); margin-bottom:10px">$1,000</div>
+        <h4 style="font-size:15px; margin:0 0 8px">People's Choice</h4>
+        <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">A community-selected project chosen from approved Season Zero finalists.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- tracker -->
+  <div id="tracker" style="padding:56px 32px; border-top:1px solid var(--color-divider)">
+    <div style="display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:20px; flex-wrap:wrap">
+      <div>
+        <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Live concept tracker</div>
+        <h2 style="font-size:32px; margin:0">Crews entering Season Zero</h2>
+      </div>
+    </div>
+    <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); overflow:hidden">
+      <div style="display:grid; grid-template-columns:1.3fr 1fr .9fr 1fr 1.1fr; gap:16px; padding:12px 20px; background:var(--color-surface); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500)">
+        <div>Crew</div><div>City</div><div>Lane</div><div>Entry status</div><div>Profile completion</div>
+      </div>
+      <sc-for list="{{ crews }}" as="c" hint-placeholder-count="8">
+        <div style="display:grid; grid-template-columns:1.3fr 1fr .9fr 1fr 1.1fr; gap:16px; padding:14px 20px; border-top:1px solid var(--color-divider); align-items:center">
+          <div style="font-size:14px">{{ c.name }}</div>
+          <div class="text-muted" style="font-size:13px">{{ c.city }}</div>
+          <div><span class="tag tag-accent" style="font-size:10.5px">{{ c.lane }}</span></div>
+          <div class="text-muted" style="font-size:13px">{{ c.status }}</div>
+          <div style="display:flex; align-items:center; gap:8px">
+            <div style="flex:1; height:6px; border-radius:99px; background:var(--color-neutral-800); overflow:hidden; max-width:90px">
+              <div style="height:100%; background:var(--rd-grad); border-radius:99px; width:{{ c.pct }}%"></div>
+            </div>
+            <span class="text-muted" style="font-size:12px">{{ c.pct }}%</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- process -->
+  <div style="padding:56px 32px; border-top:1px solid var(--color-divider)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Season Zero process</div>
+    <h2 style="font-size:32px; margin:0 0 28px; max-width:22ch">Enter. Participate. Apply. Build.</h2>
+    <p class="text-muted" style="font-size:14px; line-height:1.6; max-width:60ch; margin:0 0 28px">The fund rewards meaningful participation in the RD1 ecosystem, not one-time entry for a chance to win.</p>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px">
+      <div style="border-top:2px solid var(--color-divider); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Phase 01</div>
+        <div style="font-family:var(--font-heading); font-size:18px; margin-bottom:4px">Founding Entry</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Crews submit their profile, city, leadership contact, reach, and community work.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-divider); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Phase 02</div>
+        <div style="font-family:var(--font-heading); font-size:18px; margin-bottom:4px">Season Zero</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Crews participate through races, community activity, storytelling, or network programming.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-divider); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Phase 03</div>
+        <div style="font-family:var(--font-heading); font-size:18px; margin-bottom:4px">Grant Application</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Eligible crews submit a focused project plan, budget, timeline, and intended outcomes.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-divider); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Phase 04</div>
+        <div style="font-family:var(--font-heading); font-size:18px; margin-bottom:4px">Award + Report</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Selected projects receive funding and share implementation updates through the dashboard.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- apply -->
+  <div id="apply" style="padding:56px 32px; border-top:1px solid var(--color-divider); display:grid; grid-template-columns:1fr 1fr; gap:56px">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Crew entry</div>
+      <h2 style="font-size:32px; margin:0 0 14px; max-width:18ch">Start with your crew profile.</h2>
+      <p class="text-muted" style="font-size:14px; line-height:1.6; max-width:44ch; margin:0 0 20px">This short interest form collects initial demand. The full application routes to a dedicated crew entry form.</p>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px">Proposed eligibility</div>
+      <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px">
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Complete a verified RD1 crew profile</li>
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Participate in Season Zero programming or competition</li>
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Share one measurable example of community impact</li>
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Submit a realistic project plan and budget</li>
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Agree to document the use and impact of awarded funds</li>
+        <li style="display:flex; gap:10px; font-size:13px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Remain in good standing through the grant period</li>
+      </ul>
+    </div>
+    <form style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:28px; display:flex; flex-direction:column; gap:16px" onSubmit="{{ onSubmit }}">
+      <div class="field">
+        <label>Crew name</label>
+        <input class="input" type="text" placeholder="6RUN5" required=""></input>
+      </div>
+      <div class="field">
+        <label>City</label>
+        <input class="input" type="text" placeholder="Nashville, TN" required=""></input>
+      </div>
+      <div class="field">
+        <label>Leader name</label>
+        <input class="input" type="text" placeholder="Full name" required=""></input>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input class="input" type="email" placeholder="you@email.com" required=""></input>
+      </div>
+      <div class="field">
+        <label>Likely project lane</label>
+        <select class="input">
+          <option>Build</option>
+          <option>Move</option>
+          <option>Impact</option>
+          <option>Tell</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Approx. community size</label>
+        <input class="input" type="text" placeholder="e.g. 150"></input>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">{{ submitLabel }}</button>
+      <sc-if value="{{ submitted }}">
+        <p style="font-size:12.5px; color:var(--color-accent-300); margin:0">Interest saved. Use the full application link below to submit to RD1.</p>
+      </sc-if>
+      <div style="display:flex; gap:14px; font-size:12.5px; padding-top:4px; border-top:1px solid var(--color-divider)">
+        <a href="https://forms.google.com" target="_blank">Open full crew entry form ↗</a>
+        <a href="mailto:hello@rundivision1.com">Ask a question ↗</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- faq -->
+  <div style="padding:56px 32px; border-top:1px solid var(--color-divider)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Before you apply</div>
+    <h2 style="font-size:30px; margin:0 0 24px">Questions, answered</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px 48px; max-width:1000px">
+      <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="4">
+        <div>
+          <div style="font-family:var(--font-heading); font-size:16px; margin-bottom:6px">{{ q.q }}</div>
+          <p class="text-muted" style="font-size:13.5px; line-height:1.6; margin:0">{{ q.a }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- close -->
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:32px; padding:44px 32px; background:var(--color-surface); border-top:1px solid var(--color-divider)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">RD1 / Season Zero Community Fund</div>
+      <h2 style="font-size:32px; margin:0; max-width:20ch">Help build the first Season Zero.</h2>
+    </div>
+    <div style="display:flex; gap:10px; flex-shrink:0">
+      <a href="#apply" class="btn btn-primary" style="white-space:nowrap; flex-shrink:0">Enter your crew</a>
+      <a href="RD1 Season Zero.dc.html" class="btn btn-secondary" style="white-space:nowrap; flex-shrink:0">Back to Season Zero</a>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CREWS = [
+  { name:'District Running Collective', city:'Washington, DC', lane:'Move', status:'Verified', pct:100 },
+  { name:'6RUN5', city:'Nashville, TN', lane:'Impact', status:'Verified', pct:90 },
+  { name:'WERUN313', city:'Detroit, MI', lane:'Build', status:'Verified', pct:85 },
+  { name:'PEACE RUNNERS 773', city:'Chicago, IL', lane:'Tell', status:'Verified', pct:100 },
+  { name:'KEEPITRUNHUNDRED', city:'Los Angeles, CA', lane:'Move', status:'In review', pct:70 },
+  { name:'FEAR MKE', city:'Milwaukee, WI', lane:'Impact', status:'In review', pct:60 },
+  { name:'STL RUN CREW', city:'St. Louis, MO', lane:'Build', status:'Profile started', pct:35 },
+  { name:'PIONEERS RUN CREW', city:'Boston, MA', lane:'Tell', status:'Profile started', pct:40 }
+];
+
+const FAQS = [
+  { q:'Is the $10,000 fund currently guaranteed?', a:'No. This concept tracks a target fund while founding partner support is secured \u2014 the funding goal and committed funding are shown separately until a sponsor agreement is signed.' },
+  { q:'Does entering Season Zero guarantee grant eligibility?', a:'No. Crews complete the participation and profile requirements before they can submit a full grant application.' },
+  { q:'Can smaller crews participate?', a:'Yes. Evaluation considers community need, feasibility, impact, and readiness rather than social audience or crew size alone.' },
+  { q:'How will projects be selected?', a:'Published scoring criteria, an independent review panel, and a limited community vote for the People\u2019s Choice award.' }
+];
+
+class Component extends DCLogic {
+  state = { submitted: false };
+  renderVals() {
+    return {
+      crews: CREWS,
+      faqs: FAQS,
+      submitted: this.state.submitted,
+      submitLabel: this.state.submitted ? 'Interest saved' : 'Save interest locally',
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

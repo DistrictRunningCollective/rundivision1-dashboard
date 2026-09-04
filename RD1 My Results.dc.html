@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+    --color-success: #5fbf8f; --color-success-tint: rgba(95,191,143,.12);
+    --color-warn: #e0a83e; --color-warn-tint: rgba(224,168,62,.12);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="standings" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <div style="padding:48px 32px 8px; display:flex; justify-content:space-between; align-items:end; gap:24px; flex-wrap:wrap">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">M. Solis · District Running Collective</div>
+      <h1 style="font-size:32px; margin:0">My results</h1>
+    </div>
+    <a href="RD1 Submit Result.dc.html" class="btn btn-primary" style="white-space:nowrap">Submit a new result</a>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); margin-top:28px">
+    <div style="padding:20px 28px">
+      <div style="font-family:var(--font-heading); font-size:28px; letter-spacing:-.02em">{{ summary.rounds }}</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Rounds run</div>
+    </div>
+    <div style="padding:20px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:28px; letter-spacing:-.02em; color:var(--color-success)">{{ summary.verified }}</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Verified</div>
+    </div>
+    <div style="padding:20px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:28px; letter-spacing:-.02em">{{ summary.best }}</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Personal best</div>
+    </div>
+    <div style="padding:20px 28px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:28px; letter-spacing:-.02em; color:var(--color-accent-300)">{{ summary.points }}</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Points contributed</div>
+    </div>
+  </div>
+
+  <div style="padding:36px 32px 64px">
+    <table class="table" style="width:100%">
+      <thead>
+        <tr><th>Circuit</th><th>Date</th><th>Submitted time</th><th>Status</th><th>Points</th></tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ results }}" as="r" hint-placeholder-count="5">
+          <tr>
+            <td>
+              <div style="font-family:var(--font-heading); font-size:14px">{{ r.circuit }}</div>
+              <div class="text-muted" style="font-size:11px">{{ r.crew }}</div>
+            </td>
+            <td class="text-muted">{{ r.date }}</td>
+            <td style="font-family:var(--font-heading)">{{ r.time }}</td>
+            <td>
+              <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:999px; border:1px solid {{ r.statusColor }}; color:{{ r.statusColor }}; background:{{ r.statusBg }}">
+                <span style="width:6px; height:6px; border-radius:50%; background:{{ r.statusColor }}"></span>{{ r.statusLabel }}
+              </span>
+            </td>
+            <td style="font-family:var(--font-heading); color:{{ r.ptsColor }}">{{ r.ptsLabel }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+
+    <sc-for list="{{ notes }}" as="n" hint-placeholder-count="1">
+      <p class="text-muted" style="font-size:12px; margin:16px 0 0">{{ n }}</p>
+    </sc-for>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const RESULTS = [
+  { circuit:'Washington, DC', crew:'District Running Collective', date:'Sep 21, 2026', time:'15:42', status:'verified', pts:10 },
+  { circuit:'Chicago', crew:'Guest circuit', date:'Aug 30, 2026', time:'16:58', status:'verified', pts:6 },
+  { circuit:'Nashville', crew:'Guest circuit', date:'Aug 12, 2026', time:'—', status:'flagged', pts:null },
+  { circuit:'Boston', crew:'Guest circuit', date:'Jul 22, 2026', time:'17:35', status:'verified', pts:4 },
+  { circuit:'Detroit', crew:'Guest circuit', date:'Sep 30, 2026', time:'—', status:'pending', pts:null }
+];
+
+const STATUS_STYLE = {
+  verified: { color:'var(--color-success)', bg:'var(--color-success-tint)', label:'Verified' },
+  pending:  { color:'var(--color-neutral-400)', bg:'transparent', label:'Pending' },
+  flagged:  { color:'var(--color-warn)', bg:'var(--color-warn-tint)', label:'Flagged' }
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    const verifiedCount = RESULTS.filter(r => r.status === 'verified').length;
+    const totalPts = RESULTS.reduce((sum, r) => sum + (r.pts || 0), 0);
+    return {
+      summary: { rounds: RESULTS.length, verified: verifiedCount, best: '15:42', points: totalPts },
+      results: RESULTS.map(r => {
+        const st = STATUS_STYLE[r.status];
+        return {
+          ...r,
+          statusColor: st.color, statusBg: st.bg, statusLabel: st.label,
+          ptsLabel: r.pts != null ? r.pts : '—',
+          ptsColor: r.pts != null ? 'var(--color-accent-300)' : 'var(--color-neutral-500)'
+        };
+      }),
+      notes: ['Points reflect this round\u2019s contribution to your crew\u2019s standings. Flagged and pending results score once verification finishes.']
+    };
+  }
+}
+
+</script>
+</body>
+</html>

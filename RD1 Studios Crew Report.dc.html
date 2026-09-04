@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <!-- nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="studios" cta-label="← Studios" cta-href="RD1 Studios.dc.html" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- hero -->
+  <div style="padding:56px 32px 40px; max-width:900px">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px">
+      <span class="tag tag-accent" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase">Crew report</span>
+      <span class="text-muted" style="font-size:12px">RunDivision Studios · Aug 17, 2026</span>
+    </div>
+    <h1 style="font-size:46px; line-height:1.08; letter-spacing:-.03em; margin:0 0 18px; max-width:24ch">Belonging is the metric that moves the needle.</h1>
+    <p class="text-muted" style="font-size:16px; line-height:1.6; margin:0 0 10px; max-width:62ch">PEACE RUNNERS 773's Out West Run 13.1 training program in Chicago's Garfield Park just produced one of the first studies to measure a community running program's health, social, and economic effects together — and belonging came out as the driver behind all of it.</p>
+    <div class="text-muted" style="font-size:12px">Reporting on the Comprehensive Impact Report, developed with SPARC for Sports and researchers from Kent State University · Source: <a href="https://www.endurancesportswire.com/peace-runners-773-study-finds-belonging-drives-health-and-economic-gains/" target="_blank">Endurance Sportswire</a></div>
+  </div>
+
+  <div class="lighten" style="height:380px; position:relative; margin:0 32px 8px; border-radius:var(--radius-lg); overflow:hidden">
+    <image-slot id="rd1-report-773-hero" shape="rect" placeholder="Hero: PEACE RUNNERS 773 group run, Garfield Park"></image-slot>
+  </div>
+
+  <!-- stat band -->
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); margin-top:32px">
+    <div style="padding:26px 32px">
+      <div style="font-family:var(--font-heading); font-size:36px; letter-spacing:-.02em; color:var(--color-accent-300)">2.6 pts</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; line-height:1.4">Average PHQ-9 improvement — mild to minimal depressive symptoms</div>
+    </div>
+    <div style="padding:26px 32px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:36px; letter-spacing:-.02em; color:var(--color-accent-300)">$3.2–3.3K</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; line-height:1.4">Estimated annual workplace productivity value per participant</div>
+    </div>
+    <div style="padding:26px 32px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:36px; letter-spacing:-.02em">4</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; line-height:1.4">Key outcome areas: mental health, activity, productivity, connection</div>
+    </div>
+    <div style="padding:26px 32px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:36px; letter-spacing:-.02em">1st</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; line-height:1.4">Study to combine health, social, and economic effects of a run program</div>
+    </div>
+  </div>
+
+  <!-- body -->
+  <div style="padding:48px 32px 8px; display:grid; grid-template-columns:1.3fr .7fr; gap:56px; max-width:1080px">
+    <div>
+      <h2 style="font-size:26px; margin:0 0 16px">The study</h2>
+      <p style="font-size:15px; line-height:1.7; margin:0 0 18px">PEACE RUNNERS 773 partnered with SPARC for Sports, which brought in researchers Dr. Jennifer Wiggins-Lyndall and Dr. Shawn Rohlin of Kent State University to study the crew's Out West Run 13.1 training program. The resulting Comprehensive Impact Report set out to connect health data, economic data, and the stories of runners and their neighborhoods in one place — something Wiggins-Lyndall said had not been attempted for a community running program before.</p>
+      <p style="font-size:15px; line-height:1.7; margin:0 0 18px">The findings held up across four areas: mental health, physical activity, workplace productivity, and community connection. Participants improved by an average of 2.6 points on the PHQ-9 depression scale, moving from mild to minimal depressive symptoms, and that shift alone was tied to an estimated $3,200 to $3,279 in workplace productivity gains per person each year.</p>
+
+      <h2 style="font-size:26px; margin:32px 0 16px">Why belonging, not miles</h2>
+      <p style="font-size:15px; line-height:1.7; margin:0 0 18px">The most consistent theme in the data wasn't the running itself. In interviews, participants described feeling supported, feeling like they weren't alone, and feeling part of something bigger — and researchers pointed to that sense of belonging as the thread running through nearly every gain the study measured.</p>
+      <p style="font-size:15px; line-height:1.7; margin:0 0 18px">Researchers also flagged a network effect: runners who received support through the program went on to become a source of encouragement for others, spreading the program's benefits through Garfield Park over time rather than stopping with the people who showed up first.</p>
+
+      <div style="border-left:2px solid var(--color-accent-500); padding:4px 0 4px 22px; margin:32px 0">
+        <p style="font-family:var(--font-heading); font-size:20px; line-height:1.5; margin:0; letter-spacing:-.01em">"What surprised us in the qualitative data is that participants kept crediting the community more than the running itself."</p>
+        <div class="text-muted" style="font-size:13px; margin-top:10px">— Dr. Jennifer Wiggins-Lyndall, Kent State University</div>
+      </div>
+
+      <h2 style="font-size:26px; margin:32px 0 16px">What it means for the network</h2>
+      <p style="font-size:15px; line-height:1.7; margin:0 0 18px">For RD1, this is a working example of what the Impact Cup is built to recognize: documented, measurable community impact around a circuit, not just turnout on race day. PEACE RUNNERS 773's report gives other crews a framework for evaluating their own health, social, and economic impact — and gives RD1 judges harder evidence to score against.</p>
+    </div>
+
+    <div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:24px; background:var(--color-surface); margin-bottom:16px">
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:14px">Crew</div>
+        <div style="font-family:var(--font-heading); font-size:20px; margin-bottom:4px">PEACE RUNNERS 773</div>
+        <div class="text-muted" style="font-size:13px; margin-bottom:18px">Chicago · Garfield Park</div>
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Program studied</div>
+        <div style="font-size:14px; margin-bottom:18px">Out West Run 13.1 training program</div>
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Research partners</div>
+        <div style="font-size:14px">SPARC for Sports · Kent State University</div>
+      </div>
+      <div class="lighten" style="position:relative; height:200px; border-radius:var(--radius-md); overflow:hidden">
+        <image-slot id="rd1-report-773-side" shape="rect" placeholder="PEACE RUNNERS 773 — community moment"></image-slot>
+      </div>
+      <a href="RD1 Scoring.dc.html" class="btn btn-ghost" style="margin-top:16px">How this scores in the Impact Cup →</a>
+    </div>
+  </div>
+
+  <div style="padding:48px 32px 64px; border-top:1px solid var(--color-divider); margin-top:40px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap">
+    <div>
+      <h2 style="font-size:24px; margin:0 0 8px">More from RunDivision Studios</h2>
+      <p class="text-muted" style="font-size:14px; margin:0">Route stories, City Day recaps, and crew reports from across the division.</p>
+    </div>
+    <a href="RD1 Studios.dc.html" class="btn btn-primary" style="white-space:nowrap">Back to Studios</a>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1400,&quot;height&quot;:1900}}"></script>
+</body>
+</html>

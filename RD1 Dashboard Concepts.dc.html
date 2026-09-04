@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <!-- nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="" cta-label="Apply to join" cta-href="RD1 Network.dc.html#join" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- full-bleed hero, apple tv channel style -->
+  <div style="position:relative; height:64vh; min-height:480px; overflow:hidden">
+    <div style="position:absolute; inset:0; overflow:hidden">
+      <image-slot id="rd1-home-hero" shape="rect" placeholder="Full-bleed: a crew mid-run, shot dark"></image-slot>
+    </div>
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.05) 40%, rgba(0,0,0,.75) 78%, #000 100%); pointer-events:none"></div>
+    <div style="position:absolute; inset:0 30% 0 0; background:linear-gradient(90deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 70%, transparent 100%); pointer-events:none"></div>
+    <div style="position:absolute; left:0; right:0; bottom:0; padding:0 48px 56px; max-width:760px">
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:18px">The world's first run division</div>
+      <h1 style="font-size:60px; line-height:.98; letter-spacing:-.035em; margin:0 0 18px; font-weight:600">RunDivision1.</h1>
+      <p style="font-size:17px; line-height:1.6; max-width:52ch; margin:0; color:var(--color-neutral-300)">A member association, a national championship, and a media studio, built around the independent run crews already shaping running culture in their cities.</p>
+    </div>
+  </div>
+
+  <!-- countdown -->
+  <div style="padding:36px 32px; border-bottom:1px solid var(--color-divider); display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Season Zero kickoff</div>
+      <h2 style="font-size:24px; margin:0 0 6px">Countdown to launch</h2>
+      <p class="text-muted" style="font-size:13.5px; margin:0">Racing begins October 1, 2026 at 8:00 AM.</p>
+    </div>
+    <div style="display:flex; gap:14px">
+      <div style="text-align:center; min-width:64px">
+        <div style="font-family:var(--font-heading); font-size:34px; letter-spacing:-.02em; color:var(--color-accent-300)">{{ cdDays }}</div>
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Days</div>
+      </div>
+      <div style="font-family:var(--font-heading); font-size:34px; color:var(--color-divider)">:</div>
+      <div style="text-align:center; min-width:64px">
+        <div style="font-family:var(--font-heading); font-size:34px; letter-spacing:-.02em">{{ cdHours }}</div>
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Hrs</div>
+      </div>
+      <div style="font-family:var(--font-heading); font-size:34px; color:var(--color-divider)">:</div>
+      <div style="text-align:center; min-width:64px">
+        <div style="font-family:var(--font-heading); font-size:34px; letter-spacing:-.02em">{{ cdMinutes }}</div>
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Min</div>
+      </div>
+      <div style="font-family:var(--font-heading); font-size:34px; color:var(--color-divider)">:</div>
+      <div style="text-align:center; min-width:64px">
+        <div style="font-family:var(--font-heading); font-size:34px; letter-spacing:-.02em">{{ cdSeconds }}</div>
+        <div class="text-muted" style="font-size:10px; letter-spacing:.12em; text-transform:uppercase">Sec</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- roadmap timeline -->
+  <div style="padding:44px 32px 52px; border-bottom:1px solid var(--color-divider)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Roadmap</div>
+    <h2 style="font-size:24px; margin:0 0 32px">Key dates</h2>
+    <div style="position:relative; display:flex; justify-content:space-between; gap:4px">
+      <div style="position:absolute; left:0; right:0; top:16px; height:1px; background:var(--color-divider)"></div>
+      <sc-for list="{{ milestones }}" as="m" hint-placeholder-count="8">
+        <div style="position:relative; flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 4px">
+          <div style="width:32px; height:32px; border-radius:50%; background:var(--color-surface); border:1px solid var(--color-accent-700); display:flex; align-items:center; justify-content:center; margin-bottom:14px; z-index:1">
+            <i class="ph ph-{{ m.icon }}" style="font-size:16px; color:var(--color-accent-300)"></i>
+          </div>
+          <div class="text-muted" style="font-size:10px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; white-space:nowrap">{{ m.date }}</div>
+          <div style="font-size:12px; line-height:1.35; font-family:var(--font-heading)">{{ m.title }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- metrics -->
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid var(--color-divider)">
+    <div style="padding:26px 32px">
+      <div style="font-family:var(--font-heading); font-size:38px; letter-spacing:-.02em">10</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Member crews</div>
+    </div>
+    <div style="padding:26px 32px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:38px; letter-spacing:-.02em">10</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">City circuits</div>
+    </div>
+    <div style="padding:26px 32px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:38px; letter-spacing:-.02em">5</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Rounds completed</div>
+    </div>
+    <div style="padding:26px 32px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:38px; letter-spacing:-.02em; color:var(--color-accent-300)">3</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Season cups</div>
+    </div>
+  </div>
+
+  <!-- three expressions -->
+  <div style="padding:56px 32px 24px">
+    <div style="display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:28px">
+      <div>
+        <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">One platform</div>
+        <h2 style="font-size:34px; margin:0">Four ways in.</h2>
+      </div>
+      <p class="text-muted" style="max-width:44ch; font-size:14px; margin:0">Network membership, the live season, the story behind it, and the teams carrying it all.</p>
+    </div>
+  </div>
+
+  <!-- network -->
+  <div style="padding:24px 32px 56px; display:grid; grid-template-columns:.95fr 1.05fr; gap:44px; align-items:center; border-bottom:1px solid var(--color-divider)">
+    <div class="lighten" style="position:relative; height:320px; border-radius:var(--radius-md); overflow:hidden">
+      <image-slot id="rd1-home-network" shape="rect" placeholder="Network: crew leaders together"></image-slot>
+    </div>
+    <div>
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">01 / The Network</div>
+      <h3 style="font-size:30px; margin:0 0 12px; letter-spacing:-.02em">Keep your identity. Gain infrastructure.</h3>
+      <p class="text-muted" style="font-size:14px; line-height:1.6; margin:0 0 20px; max-width:52ch">RunDivision is a member association for independently owned, community-led run crews. Affiliation brings shared infrastructure, paid partnerships, member grants, and a voice in shaping the network, without asking crews to give up what they built.</p>
+      <a href="RD1 Network.dc.html" class="btn btn-ghost">Explore the Network →</a>
+    </div>
+  </div>
+
+  <!-- season zero -->
+  <div style="padding:56px 32px; display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center; border-bottom:1px solid var(--color-divider)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">02 / Season Zero</div>
+      <h3 style="font-size:30px; margin:0 0 12px; letter-spacing:-.02em">Ten cities. One division.</h3>
+      <p class="text-muted" style="font-size:14px; line-height:1.6; margin:0 0 20px; max-width:52ch">The inaugural season connects the crews through a circuit of locally curated city challenges. Each host crew picks its own route, and every field feeds three national cups: Championship, Club, and Impact.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a href="RD1 Season Zero.dc.html" class="btn btn-primary">Enter Season Zero →</a>
+        <a href="RD1 Standings.dc.html" class="btn btn-ghost">View standings →</a>
+      </div>
+    </div>
+    <div class="lighten" style="position:relative; height:320px; border-radius:var(--radius-md); overflow:hidden">
+      <image-slot id="rd1-home-seasonzero" shape="rect" placeholder="Season Zero: City Day start line"></image-slot>
+    </div>
+  </div>
+
+  <!-- studios -->
+  <div style="padding:56px 32px; display:grid; grid-template-columns:.95fr 1.05fr; gap:44px; align-items:center; border-bottom:1px solid var(--color-divider)">
+    <div class="lighten" style="position:relative; height:320px; border-radius:var(--radius-md); overflow:hidden">
+      <image-slot id="rd1-home-studios" shape="rect" placeholder="Studios: behind-the-scenes shoot"></image-slot>
+    </div>
+    <div>
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">03 / Studios</div>
+      <h3 style="font-size:30px; margin:0 0 12px; letter-spacing:-.02em">The people, places and crews create the league.</h3>
+      <p class="text-muted" style="font-size:14px; line-height:1.6; margin:0 0 20px; max-width:52ch">RunDivision Studios is the media arm documenting the crews, athletes and cities behind the movement. Route stories, City Day recaps, and profiles of the founding crews, published year-round.</p>
+      <a href="RD1 Studios.dc.html" class="btn btn-ghost">See the stories →</a>
+    </div>
+  </div>
+
+  <!-- teams -->
+  <div style="padding:56px 32px 64px; display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center">
+    <div>
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">04 / Teams</div>
+      <h3 style="font-size:30px; margin:0 0 12px; letter-spacing:-.02em">Ten teams, ten cities.</h3>
+      <p class="text-muted" style="font-size:14px; line-height:1.6; margin:0 0 20px; max-width:52ch">Every RD1 team is an independent crew competing as its city's representative. See who is racing, who is organizing, and how each team is scoring across the three season cups.</p>
+      <a href="RD1 Teams.dc.html" class="btn btn-ghost">Meet the teams →</a>
+    </div>
+    <div class="lighten" style="position:relative; height:320px; border-radius:var(--radius-md); overflow:hidden">
+      <image-slot id="rd1-home-teams" shape="rect" placeholder="Teams: the ten founding crews"></image-slot>
+    </div>
+  </div>
+
+  <!-- fund highlight -->
+  <div style="padding:56px 32px; background:var(--rd-grad)">
+    <div style="display:grid; grid-template-columns:1.15fr .85fr; gap:32px; align-items:center">
+      <div>
+        <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.8); margin-bottom:14px">RD1 Fund · Season Zero → 2027</div>
+        <h2 style="font-size:30px; line-height:1.1; letter-spacing:-.02em; margin:0 0 14px; color:#fff; max-width:18ch">Get funded to build your 2027 season.</h2>
+        <p style="font-size:14px; line-height:1.6; margin:0 0 20px; max-width:46ch; color:rgba(255,255,255,.92)">Every crew that completes Season Zero becomes eligible for RD1's Community Fund — direct investment in the programs, events, and infrastructure that carry your crew into next season.</p>
+        <a href="RD1 Fund.dc.html" style="display:inline-flex; align-items:center; background:#fff; color:#a63512; font-weight:600; font-size:13.5px; padding:11px 20px; border-radius:999px; text-decoration:none; white-space:nowrap">Explore the RD1 Fund →</a>
+      </div>
+      <div style="background:rgba(10,10,11,.28); border:1px solid rgba(255,255,255,.25); border-radius:var(--radius-lg); padding:22px; backdrop-filter:blur(4px)">
+        <div style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.75); margin-bottom:8px">Target community investment</div>
+        <div style="font-family:var(--font-heading); font-size:38px; letter-spacing:-.02em; color:#fff; margin-bottom:10px">$10K</div>
+        <p style="font-size:12px; line-height:1.5; margin:0; color:rgba(255,255,255,.85)">Funding for crew-led programs, events, infrastructure, travel, storytelling, and community impact.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1600,&quot;height&quot;:2200}}">
+const LAUNCH = new Date('2026-10-01T08:00:00').getTime();
+
+const MILESTONES = [
+  { date: 'Sep 2026', title: 'Launch of RD1', icon: 'rocket-launch' },
+  { date: 'Oct 2026', title: 'Season Zero begins', icon: 'flag-checkered' },
+  { date: 'Nov 2026', title: 'RD1 Fund opens', icon: 'hand-coins' },
+  { date: 'Feb 2027', title: 'Season Zero closes', icon: 'flag-pennant' },
+  { date: 'Mar 2027', title: 'Champions announced', icon: 'trophy' },
+  { date: 'Apr 2027', title: 'Intake for membership opens', icon: 'user-plus' },
+  { date: 'May 2027', title: 'RD1 Championship 2027 location announced', icon: 'map-pin' },
+  { date: 'Sep 2027', title: 'Season 1 2027 begins', icon: 'calendar-check' }
+];
+
+class Component extends DCLogic {
+  state = { now: Date.now() };
+
+  componentDidMount() {
+    this._t = setInterval(() => this.setState({ now: Date.now() }), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._t);
+  }
+
+  renderVals() {
+    const pad = (n) => String(n).padStart(2, '0');
+    let diff = Math.max(0, LAUNCH - this.state.now);
+    const days = Math.floor(diff / 86400000); diff -= days * 86400000;
+    const hours = Math.floor(diff / 3600000); diff -= hours * 3600000;
+    const minutes = Math.floor(diff / 60000); diff -= minutes * 60000;
+    const seconds = Math.floor(diff / 1000);
+    return {
+      milestones: MILESTONES,
+      cdDays: String(days),
+      cdHours: pad(hours),
+      cdMinutes: pad(minutes),
+      cdSeconds: pad(seconds)
+    };
+  }
+}
+</script>
+</body>
+</html>

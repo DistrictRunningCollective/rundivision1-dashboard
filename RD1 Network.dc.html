@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <!-- nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="network" cta-label="Apply to join" cta-href="#join" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- hero -->
+  <div style="display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; padding:72px 32px 56px; background:radial-gradient(90% 100% at 15% 0%, rgba(255,90,36,.20), transparent 62%)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:20px">The world's first run division</div>
+      <h1 style="font-size:56px; line-height:1.03; letter-spacing:-.03em; margin:0 0 22px">A new run order.</h1>
+      <p class="text-muted" style="font-size:17px; line-height:1.6; margin:0 0 28px; max-width:52ch">RunDivision is a member association, championship platform, and media ecosystem built for the independent organizations shaping running culture from the ground up.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a href="#join" class="btn btn-primary" style="white-space:nowrap">Explore membership</a>
+        <a href="RD1 Standings.dc.html" class="btn btn-secondary" style="white-space:nowrap">Season Zero dashboard</a>
+      </div>
+    </div>
+    <div class="lighten" style="position:relative; height:380px; border-radius:var(--radius-lg); overflow:hidden">
+      <image-slot id="rd1net-hero" shape="rect" placeholder="Hero: founding crews, cinematic, dark"></image-slot>
+    </div>
+  </div>
+
+  <!-- stat band -->
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider)">
+    <div style="padding:24px 32px">
+      <div style="font-family:var(--font-heading); font-size:36px; letter-spacing:-.02em">10</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Member crews</div>
+    </div>
+    <div style="padding:24px 32px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:36px; letter-spacing:-.02em">10</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Cities represented</div>
+    </div>
+    <div style="padding:24px 32px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:36px; letter-spacing:-.02em; color:var(--color-accent-300)">1,200+</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">Runners in the network</div>
+    </div>
+    <div style="padding:24px 32px; border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading); font-size:36px; letter-spacing:-.02em; color:var(--color-accent-300)">$250K+</div>
+      <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase">In grants + partnerships</div>
+    </div>
+  </div>
+
+  <!-- keep your identity -->
+  <div style="padding:40px 32px 56px; border-top:1px solid var(--color-divider); display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:start">
+    <h2 style="font-size:30px; line-height:1.2; margin:0; max-width:20ch">Keep your identity. Gain infrastructure, access + leverage.</h2>
+    <p class="text-muted" style="font-size:15px; line-height:1.6; margin:0">Member organizations remain independently owned and operated. RunDivision creates the shared platform around them.</p>
+  </div>
+
+  <!-- member crew wall -->
+  <div style="padding:56px 32px; border-top:1px solid var(--color-divider)">
+    <div style="display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:24px">
+      <div>
+        <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Who's already in</div>
+        <h2 style="font-size:34px; margin:0">The founding crews</h2>
+      </div>
+      <a href="RD1 Teams.dc.html" class="btn btn-ghost" style="white-space:nowrap">See all ten teams →</a>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:14px">
+      <sc-for list="{{ crews }}" as="c" hint-placeholder-count="10">
+        <a href="RD1 Teams.dc.html" style="text-decoration:none; color:var(--color-text); border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); overflow:hidden; display:block" style-hover="border-color:var(--color-accent-700)">
+          <div class="lighten" style="position:relative; height:110px; border-bottom:1px solid var(--color-divider)">
+            <image-slot id="{{ c.slotId }}" shape="rect" placeholder="{{ c.slotHint }}"></image-slot>
+          </div>
+          <div style="padding:14px 16px 16px">
+            <div style="font-family:var(--font-heading); font-size:14px; letter-spacing:-.01em; margin-bottom:2px">{{ c.name }}</div>
+            <div class="text-muted" style="font-size:11.5px">{{ c.city }}</div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- testimonial -->
+  <div style="padding:64px 32px; border-top:1px solid var(--color-divider); display:grid; grid-template-columns:.4fr 1.6fr; gap:32px; align-items:center; background:linear-gradient(180deg, rgba(122,38,12,.28), transparent 70%)">
+    <div class="lighten" style="position:relative; height:180px; border-radius:var(--radius-lg); overflow:hidden">
+      <image-slot id="rd1net-quote-photo" shape="rect" placeholder="Founding crew leader portrait"></image-slot>
+    </div>
+    <div>
+      <div style="font-family:var(--font-heading); font-size:32px; line-height:1.25; letter-spacing:-.015em; max-width:34ch; margin-bottom:18px">"We built our crew from nothing. RunDivision gave us a grant, a national stage, and a reason to bring 200 more people out to run with us."</div>
+      <div style="font-size:14px; color:var(--color-neutral-300)">Founding member, Season Zero</div>
+    </div>
+  </div>
+
+  <!-- ecosystem -->
+  <div id="ecosystem" style="padding:56px 32px; border-top:1px solid var(--color-divider)">
+    <div style="display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:28px">
+      <div>
+        <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">The ecosystem</div>
+        <h2 style="font-size:34px; margin:0">One platform. Three expressions.</h2>
+      </div>
+      <p class="text-muted" style="max-width:44ch; font-size:14px; margin:0">RunDivision connects the year-round infrastructure crews need with a visible championship property and a media platform that tells the stories behind the movement.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px">
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:26px; background:var(--color-surface); display:flex; flex-direction:column">
+        <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:28px">01 / The Foundation</div>
+        <h3 style="font-size:22px; margin:0 0 10px">Member Association</h3>
+        <p class="text-muted" style="font-size:13px; line-height:1.6; margin:0">A formal affiliation for established community-led running organizations. Members gain shared infrastructure, collective opportunities, funding pathways, industry relationships, and a voice in shaping the network.</p>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:26px; background:var(--color-surface); display:flex; flex-direction:column">
+        <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:28px">02 / The Stage</div>
+        <h3 style="font-size:22px; margin:0 0 10px">RunDivision Championships</h3>
+        <p class="text-muted" style="font-size:13px; line-height:1.6; margin:0 0 16px">A national crew-first competition where member organizations represent their cities, compete as teams, earn points, and pursue the Performance Championship, Club Cup, and Impact Cup.</p>
+        <a href="RD1 Standings.dc.html" style="font-size:12px; margin-top:auto">Explore Championships →</a>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:26px; background:var(--color-surface); display:flex; flex-direction:column">
+        <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:28px">03 / The Story</div>
+        <h3 style="font-size:22px; margin:0 0 10px">RunDivision Studios</h3>
+        <p class="text-muted" style="font-size:13px; line-height:1.6; margin:0 0 16px">Original storytelling around crews, athletes, cities, and community impact. The media platform extends RunDivision beyond race day and creates year-round value for members, partners, and audiences.</p>
+        <a href="RD1 Season Zero.dc.html" style="font-size:12px; margin-top:auto">See Season Zero →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- why affiliate -->
+  <div style="padding:56px 32px; border-top:1px solid var(--color-divider)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Why affiliate?</div>
+    <h2 style="font-size:32px; margin:0 0 8px; max-width:22ch">Membership should create leverage.</h2>
+    <p class="text-muted" style="font-size:14px; max-width:56ch; margin:0 0 28px">RunDivision is not asking crews to give up what they built. The association exists to make things that are difficult alone more accessible together.</p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px">
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); overflow:hidden">
+        <div class="lighten" style="position:relative; height:110px; border-bottom:1px solid var(--color-divider)">
+          <image-slot id="rd1net-benefit-funding" shape="rect" placeholder="Brand partnership activation"></image-slot>
+        </div>
+        <div style="padding:16px">
+          <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">01 · Funding</div>
+          <h4 style="font-size:16px; margin:0 0 6px">Paid Partnerships</h4>
+          <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Access to national and multi-city brand opportunities negotiated through the collective scale of the network.</p>
+        </div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); overflow:hidden">
+        <div class="lighten" style="position:relative; height:110px; border-bottom:1px solid var(--color-divider)">
+          <image-slot id="rd1net-benefit-capital" shape="rect" placeholder="Youth program funded by a member grant"></image-slot>
+        </div>
+        <div style="padding:16px">
+          <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">02 · Capital</div>
+          <h4 style="font-size:16px; margin:0 0 6px">Member Grants</h4>
+          <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Funding pathways for local programming, events, youth initiatives, travel, community impact, and organizational capacity.</p>
+        </div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); overflow:hidden">
+        <div class="lighten" style="position:relative; height:110px; border-bottom:1px solid var(--color-divider)">
+          <image-slot id="rd1net-benefit-competition" shape="rect" placeholder="Crew racing at a City Day"></image-slot>
+        </div>
+        <div style="padding:16px">
+          <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">03 · Competition</div>
+          <h4 style="font-size:16px; margin:0 0 6px">Championship Access</h4>
+          <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Only affiliated member organizations can compete for official RunDivision cup titles, season points, and the overall championship.</p>
+        </div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); overflow:hidden">
+        <div class="lighten" style="position:relative; height:110px; border-bottom:1px solid var(--color-divider)">
+          <image-slot id="rd1net-benefit-infra" shape="rect" placeholder="Crew leaders at an ops meeting"></image-slot>
+        </div>
+        <div style="padding:16px">
+          <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">04 · Infrastructure</div>
+          <h4 style="font-size:16px; margin:0 0 6px">Organizational Support</h4>
+          <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">Shared standards, operating tools, partnership guidance, safety resources, vendor information, and leadership development.</p>
+        </div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); overflow:hidden">
+        <div class="lighten" style="position:relative; height:110px; border-bottom:1px solid var(--color-divider)">
+          <image-slot id="rd1net-benefit-influence" shape="rect" placeholder="Crew leaders roundtable"></image-slot>
+        </div>
+        <div style="padding:16px">
+          <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">06 · Influence</div>
+          <h4 style="font-size:16px; margin:0 0 6px">Collective Voice</h4>
+          <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">A seat in a larger conversation about how community-led running is funded, represented, supported, and developed.</p>
+        </div>
+      </div>
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); overflow:hidden">
+        <div class="lighten" style="position:relative; height:110px; border-bottom:1px solid var(--color-divider)">
+          <image-slot id="rd1net-benefit-media" shape="rect" placeholder="RunDivision Studios shoot"></image-slot>
+        </div>
+        <div style="padding:16px">
+          <div class="text-muted" style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px">05 · Media</div>
+          <h4 style="font-size:16px; margin:0 0 6px">Amplification</h4>
+          <p class="text-muted" style="font-size:13px; line-height:1.5; margin:0">National visibility through RunDivision Studios, crew profiles, championship coverage, and original storytelling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- how membership works -->
+  <div id="join" style="padding:56px 32px; border-top:1px solid var(--color-divider); background:var(--color-surface)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Member affiliation</div>
+    <h2 style="font-size:34px; margin:0 0 10px">How membership works.</h2>
+    <p class="text-muted" style="font-size:14px; max-width:60ch; margin:0 0 36px">Crews join RunDivision as independent member organizations. Membership creates the year-round relationship; the Championships are one of its most visible benefits.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; border-top:1px solid var(--color-divider)">
+      <div style="padding:24px 20px 0 0; border-right:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading); font-size:26px; color:var(--color-accent-300); margin:20px 0 14px">01</div>
+        <h4 style="font-size:15px; margin:0 0 8px">Apply as an organization</h4>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Established crews provide organizational information, leadership contacts, programming details, and alignment with shared standards.</p>
+      </div>
+      <div style="padding:24px 20px 0 20px; border-right:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading); font-size:26px; color:var(--color-accent-300); margin:20px 0 14px">02</div>
+        <h4 style="font-size:15px; margin:0 0 8px">Become an affiliated member</h4>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">The organization completes its annual membership agreement and financial or operational buy-in.</p>
+      </div>
+      <div style="padding:24px 20px 0 20px; border-right:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading); font-size:26px; color:var(--color-accent-300); margin:20px 0 14px">03</div>
+        <h4 style="font-size:15px; margin:0 0 8px">Establish a championship roster</h4>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Member crews submit one seasonal roster. Runners confirm a single RunDivision crew affiliation for competition.</p>
+      </div>
+      <div style="padding:24px 20px 0 20px; border-right:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading); font-size:26px; color:var(--color-accent-300); margin:20px 0 14px">04</div>
+        <h4 style="font-size:15px; margin:0 0 8px">Activate the network</h4>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Members participate in championships, partnerships, grants, leadership conversations, media, and shared initiatives.</p>
+      </div>
+      <div style="padding:24px 0 0 20px">
+        <div style="font-family:var(--font-heading); font-size:26px; color:var(--color-accent-300); margin:20px 0 14px">05</div>
+        <h4 style="font-size:15px; margin:0 0 8px">Grow together</h4>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Stronger organizations increase the reach, influence, and economic power of the entire RunDivision ecosystem.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:36px">
+      <a href="RD1 Apply.dc.html" class="btn btn-primary" style="white-space:nowrap">Start your application</a>
+    </div>
+  </div>
+
+  <!-- what stays yours -->
+  <div style="padding:56px 32px; border-top:1px solid var(--color-divider); display:grid; grid-template-columns:1fr 1fr; gap:40px">
+    <div>
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">What stays yours</div>
+      <h3 style="font-size:24px; margin:0 0 18px">Your crew stays your crew.</h3>
+      <div style="display:flex; flex-direction:column; gap:10px">
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px">Name and brand</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px">Local leadership</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px">Programming</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px">Membership structure</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px">Community relationships</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; border-bottom:1px solid var(--color-divider); padding-bottom:10px; font-size:14px">Independent ownership</div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">What RunDivision adds</div>
+      <h3 style="font-size:24px; margin:0 0 18px">What you gain by joining.</h3>
+      <div style="display:flex; flex-direction:column; gap:10px">
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px; color:var(--color-accent-200)">National scale</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px; color:var(--color-accent-200)">Championship eligibility</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px; color:var(--color-accent-200)">Funding opportunities</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px; color:var(--color-accent-200)">Collective negotiating power</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; font-size:14px; color:var(--color-accent-200)">Media visibility</div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:10px; border-bottom:1px solid var(--color-divider); padding-bottom:10px; font-size:14px; color:var(--color-accent-200)">Shared infrastructure</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- closing -->
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:32px; padding:48px 32px; background:var(--color-surface); border-top:1px solid var(--color-divider)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">RunDivision · A New Run Order</div>
+      <h2 style="font-size:30px; margin:0; max-width:22ch">Independent locally. Stronger collectively.</h2>
+    </div>
+    <div style="display:flex; gap:10px; flex-shrink:0">
+      <a href="#join" class="btn btn-primary" style="white-space:nowrap">Apply to join</a>
+      <a href="RD1 Standings.dc.html" class="btn btn-secondary" style="white-space:nowrap">View Season Zero</a>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CREWS = [
+  { id:'det', name:'WERUN313', city:'Detroit' },
+  { id:'chi', name:'PEACE RUNNERS 773', city:'Chicago' },
+  { id:'dc',  name:'District Running Collective', city:'Washington, DC' },
+  { id:'la',  name:'KEEPITRUNHUNDRED', city:'Los Angeles' },
+  { id:'mke', name:'FEAR MKE', city:'Milwaukee' },
+  { id:'cvl', name:'PROLYFYCK RUN CREWW', city:'Charlottesville' },
+  { id:'stl', name:'STL RUN CREW', city:'St. Louis' },
+  { id:'nsh', name:'6RUN5', city:'Nashville' },
+  { id:'bos', name:'PIONEERS RUN CREW', city:'Boston' },
+  { id:'atl', name:'ATLANTA RUN CLUB', city:'Atlanta' }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      crews: CREWS.map(c => ({ ...c, slotId: 'rd1net-crew-' + c.id, slotHint: c.name + ' \u2014 ' + c.city }))
+    };
+  }
+}
+</script>
+</body>
+</html>

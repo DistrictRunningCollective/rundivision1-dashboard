@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="shop" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- intro -->
+  <div style="min-height:60vh; display:flex; flex-direction:column; justify-content:center; padding:64px 32px; border-bottom:1px solid var(--color-divider); max-width:760px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:14px">RD1 Shop</div>
+    <h1 style="font-size:48px; line-height:1.04; letter-spacing:-.03em; margin:0 0 16px">Ten cities. Ten capsules.</h1>
+    <p class="text-muted" style="font-size:15px; line-height:1.6; margin:0 0 8px">Every founding crew gets its own capsule — a lifestyle line plus a performance line built with our brand partners. Each city's look and colors are its own.</p>
+    <p class="text-muted" style="font-size:13px; margin:0">Capsules launch with Season Zero. Scroll to preview every city.</p>
+  </div>
+
+  <sc-for list="{{ cities }}" as="c" hint-placeholder-count="10">
+    <div style="min-height:100vh; scroll-snap-align:start; display:flex; flex-direction:column; justify-content:center; padding:64px 32px; border-bottom:1px solid var(--color-divider); --color-accent:{{ c.accent }}">
+      <div style="max-width:1040px; width:100%; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--color-divider); background:var(--color-surface)">
+
+        <div style="display:grid; grid-template-columns:260px 1fr; min-height:420px">
+          <div style="background:{{ c.sidebarBg }}; position:relative; padding:32px 26px; display:flex; flex-direction:column; justify-content:space-between">
+            <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:{{ c.textOnAccent }}; opacity:.75">Capsule {{ c.num }}<br>{{ c.city }}</div>
+            <div style="font-family:var(--font-heading); font-weight:600; font-size:32px; line-height:1.1; letter-spacing:-.02em; color:{{ c.textOnAccent }}">{{ c.name }}</div>
+          </div>
+          <div class="lighten" style="position:relative">
+            <image-slot id="{{ c.heroSlotId }}" shape="rect" placeholder="{{ c.heroPlaceholder }}"></image-slot>
+          </div>
+        </div>
+
+        <div style="padding:24px 28px 28px">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px">
+            <span class="text-muted" style="font-size:11px; letter-spacing:.08em; text-transform:uppercase">Coming soon</span>
+            <sc-if value="{{ c.hasPerformance }}" hint-placeholder-val="{{ true }}">
+              <span style="display:inline-flex; align-items:center; gap:6px; padding:5px 10px; border:1px solid var(--color-accent); border-radius:var(--radius-sm); font-size:11px; color:var(--color-accent)">Powered by PYNRS</span>
+            </sc-if>
+          </div>
+          <div style="display:grid; grid-template-columns:1.4fr 1.4fr 1fr 1fr; gap:16px; align-items:start">
+            <sc-for list="{{ c.featured }}" as="p" hint-placeholder-count="2">
+              <div>
+                <div class="lighten" style="aspect-ratio:4/5; border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--color-divider); margin-bottom:8px">
+                  <image-slot id="{{ p.slotId }}" shape="rect" placeholder="{{ p.placeholder }}"></image-slot>
+                </div>
+                <div style="font-size:12.5px">{{ p.label }}</div>
+              </div>
+            </sc-for>
+            <sc-for list="{{ c.secondary }}" as="p" hint-placeholder-count="2">
+              <div>
+                <div class="lighten" style="aspect-ratio:1; border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--color-divider); margin-bottom:8px">
+                  <image-slot id="{{ p.slotId }}" shape="rect" placeholder="{{ p.placeholder }}"></image-slot>
+                </div>
+                <div class="text-muted" style="font-size:11.5px">{{ p.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </sc-for>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CITIES = [
+  { code:'det', name:'WERUN313', city:'Detroit', accent:'#d9a441' },
+  { code:'chi', name:'PEACE RUNNERS 773', city:'Chicago', accent:'#c23b3b' },
+  { code:'dc',  name:'District Running Collective', city:'Washington, DC', accent:'#2f9e8f' },
+  { code:'la',  name:'KEEPITRUNHUNDRED', city:'Los Angeles', accent:'#e0577a' },
+  { code:'mke', name:'FEAR MKE', city:'Milwaukee', accent:'#3d6b99' },
+  { code:'cvl', name:'PROLYFYCK RUN CREWW', city:'Charlottesville', accent:'#5a9c6e' },
+  { code:'stl', name:'STL RUN CREW', city:'St. Louis', accent:'#7c6a9e' },
+  { code:'nsh', name:'6RUN5', city:'Nashville', accent:'#b07a35' },
+  { code:'bos', name:'PIONEERS RUN CREW', city:'Boston', accent:'#35507a' },
+  { code:'atl', name:'ATLANTA RUN CLUB', city:'Atlanta', accent:'#cf5b2e' }
+];
+
+function luminance(hex) {
+  const n = parseInt(hex.slice(1), 16);
+  const r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
+  const f = v => v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+}
+
+class Component extends DCLogic {
+  renderVals() {
+    const cities = CITIES.map((c, i) => {
+      const mk = (key, label, type) => ({
+        key, label: c.name + ' ' + label, type,
+        slotId: 'shop-' + c.code + '-' + key,
+        placeholder: c.name + ' ' + label + ' — ' + c.city + ' lookbook shot'
+      });
+      const featured = [mk('tee', 'Tee', 'Lifestyle'), mk('singlet', 'Singlet', 'Performance')];
+      const secondary = [mk('hoodie', 'Hoodie', 'Lifestyle'), mk('shorts', 'Shorts', 'Performance')];
+      return {
+        ...c,
+        num: String(i + 1).padStart(2, '0'),
+        featured,
+        secondary,
+        hasPerformance: true,
+        heroSlotId: 'shop-' + c.code + '-hero',
+        heroPlaceholder: c.name + ', ' + c.city + ' — capsule lookbook hero',
+        sidebarBg: 'linear-gradient(160deg, ' + c.accent + ', color-mix(in srgb, ' + c.accent + ' 55%, black))',
+        textOnAccent: luminance(c.accent) > 0.4 ? '#0a0b0f' : '#f2efec'
+      };
+    });
+    return { cities };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+    --rd-grad: linear-gradient(100deg, #ff9d2f, #ff5a24 52%, #e0331f);
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <!-- nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="network" cta-label="" cta-href="" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <!-- hero -->
+  <div style="padding:64px 32px 48px; max-width:820px; background:radial-gradient(90% 100% at 15% 0%, rgba(255,90,36,.20), transparent 62%)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:18px">Membership application</div>
+    <h1 style="font-size:48px; line-height:1.04; letter-spacing:-.03em; margin:0 0 18px">Bring your crew into RunDivision.</h1>
+    <p class="text-muted" style="font-size:16px; line-height:1.6; margin:0 0 8px">RunDivision is open to independent, community-led run crews of any size or city. We're not looking for a certain look or a certain size — we're looking for organizations that already show up for their runners, week after week.</p>
+    <p class="text-muted" style="font-size:14px; line-height:1.6; margin:0">Every application is reviewed by a person, not a filter. That takes a little longer, but it keeps the network safe and the standard real.</p>
+  </div>
+
+  <!-- what we look for -->
+  <div style="padding:0 32px 56px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">What we look for</div>
+    <h2 style="font-size:28px; margin:0 0 24px">Open door, real standards.</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px 48px; max-width:1000px">
+      <div>
+        <h4 style="font-size:15px; margin:0 0 8px; color:var(--color-accent-300)">We welcome</h4>
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px">
+          <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Crews of any size, pace range, or founding date</li>
+          <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Any city, neighborhood, or region — we're not limited to the ten founding markets</li>
+          <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Run-walk groups, training clubs, and identity- or community-based crews alike</li>
+          <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Volunteer-run organizations without formal nonprofit or LLC status</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:15px; margin:0 0 8px; color:var(--color-accent-300)">We require</h4>
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px">
+          <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> At least 6 months of regular, public group runs</li>
+          <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> A named, reachable point of contact who is 18 or older</li>
+          <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> A written commitment to a safe, non-discriminatory space for all runners</li>
+          <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Agreement to RD1's code of conduct and event safety guidelines</li>
+          <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> No pending safety complaints, bans, or unresolved incidents with another run organization</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- what happens next -->
+  <div style="padding:48px 32px; border-top:1px solid var(--color-divider); background:var(--color-surface)">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">After you submit</div>
+    <h2 style="font-size:26px; margin:0 0 24px">What happens next.</h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px">
+      <div style="border-top:2px solid var(--color-accent-500); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Step 1</div>
+        <div style="font-family:var(--font-heading); font-size:17px; margin-bottom:4px">Application review</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">A member of the RD1 team reads every application. Typical turnaround is 5–7 business days.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-accent-500); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Step 2</div>
+        <div style="font-family:var(--font-heading); font-size:17px; margin-bottom:4px">A short call</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">We talk through your crew's programming, safety practices, and what membership would mean for you.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-accent-500); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Step 3</div>
+        <div style="font-family:var(--font-heading); font-size:17px; margin-bottom:4px">Decision</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Approved, or we'll tell you directly what's missing and invite you to reapply once it's in place.</p>
+      </div>
+      <div style="border-top:2px solid var(--color-accent-500); padding-top:14px">
+        <div class="text-muted" style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px">Step 4</div>
+        <div style="font-family:var(--font-heading); font-size:17px; margin-bottom:4px">Onboarding</div>
+        <p class="text-muted" style="font-size:12.5px; line-height:1.5; margin:0">Sign the membership agreement, submit your roster, and get access to the network.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- application form -->
+  <div id="apply-form" style="padding:56px 32px; display:grid; grid-template-columns:1fr 1.3fr; gap:56px">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Before you start</div>
+      <h2 style="font-size:28px; margin:0 0 16px; max-width:16ch">Have this ready.</h2>
+      <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; margin-bottom:24px">
+        <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Your crew's founding year and home city</li>
+        <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> A rough active member count</li>
+        <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> Links to your Instagram, Strava club, or website</li>
+        <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> A contact who can speak for the organization</li>
+        <li style="display:flex; gap:10px; font-size:13.5px; color:var(--color-neutral-300)"><span style="color:var(--color-accent-400)">—</span> A couple sentences on why your crew exists</li>
+      </ul>
+      <p class="text-muted" style="font-size:12.5px; line-height:1.6; margin:0">Questions before applying? Email <a href="mailto:membership@rundivision1.com">membership@rundivision1.com</a>.</p>
+    </div>
+
+    <form style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); padding:32px; display:flex; flex-direction:column; gap:18px" onSubmit="{{ onSubmit }}">
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500); margin-bottom:-4px">Organization</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+        <div class="field">
+          <label>Crew name</label>
+          <input class="input" type="text" placeholder="e.g. 6RUN5" required=""></input>
+        </div>
+        <div class="field">
+          <label>Home city</label>
+          <input class="input" type="text" placeholder="City, State" required=""></input>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+        <div class="field">
+          <label>Founded (year)</label>
+          <input class="input" type="number" placeholder="2021" min="1990" max="2026" required=""></input>
+        </div>
+        <div class="field">
+          <label>Estimated active members</label>
+          <input class="input" type="text" placeholder="e.g. 60" required=""></input>
+        </div>
+      </div>
+      <div class="field">
+        <label>Instagram, Strava, or website link</label>
+        <input class="input" type="text" placeholder="https://instagram.com/yourcrew" required=""></input>
+      </div>
+      <div class="field">
+        <label>Tell us about your crew</label>
+        <textarea class="input" rows="3" placeholder="Who you run for, how long you've been running together, and what a typical week looks like." required=""></textarea>
+      </div>
+
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500); margin:8px 0 -4px">Primary contact</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+        <div class="field">
+          <label>Full name</label>
+          <input class="input" type="text" placeholder="Jordan Blake" required=""></input>
+        </div>
+        <div class="field">
+          <label>Role at the crew</label>
+          <input class="input" type="text" placeholder="Founder, Captain, etc." required=""></input>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+        <div class="field">
+          <label>Email</label>
+          <input class="input" type="email" placeholder="you@email.com" required=""></input>
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input class="input" type="tel" placeholder="(555) 555-5555" required=""></input>
+        </div>
+      </div>
+
+      <div style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-500); margin:8px 0 -4px">Agreements</div>
+      <label style="display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--color-neutral-300)">
+        <input type="checkbox" required="" style="margin-top:2px"></input>
+        I confirm I am 18 or older and authorized to represent this organization.
+      </label>
+      <label style="display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--color-neutral-300)">
+        <input type="checkbox" required="" style="margin-top:2px"></input>
+        Our crew commits to a safe, welcoming, non-discriminatory space for all runners, regardless of pace, background, or identity.
+      </label>
+      <label style="display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--color-neutral-300)">
+        <input type="checkbox" required="" style="margin-top:2px"></input>
+        I agree to RD1's code of conduct and event safety guidelines, and confirm we have no unresolved safety complaints with another run organization.
+      </label>
+      <label style="display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--color-neutral-300)">
+        <input type="checkbox" required="" style="margin-top:2px"></input>
+        I understand applications are reviewed individually and membership is not guaranteed.
+      </label>
+
+      <button type="submit" class="btn btn-primary btn-block">{{ submitLabel }}</button>
+      <sc-if value="{{ submitted }}">
+        <p style="font-size:12.5px; color:var(--color-accent-300); margin:0">Application received. Expect a response from the RD1 team within 5–7 business days.</p>
+      </sc-if>
+    </form>
+  </div>
+
+  <!-- faq -->
+  <div style="padding:0 32px 56px; border-top:1px solid var(--color-divider); padding-top:48px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:10px">Before you apply</div>
+    <h2 style="font-size:28px; margin:0 0 24px">Questions, answered</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px 48px; max-width:1000px">
+      <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="6">
+        <div>
+          <div style="font-family:var(--font-heading); font-size:16px; margin-bottom:6px">{{ q.q }}</div>
+          <p class="text-muted" style="font-size:13.5px; line-height:1.6; margin:0">{{ q.a }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- close -->
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:32px; padding:44px 32px; background:var(--color-surface); border-top:1px solid var(--color-divider)">
+    <div>
+      <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:12px">RD1 membership</div>
+      <h2 style="font-size:30px; margin:0; max-width:20ch">Your crew already does the work. Let's make it count.</h2>
+    </div>
+    <div style="display:flex; gap:10px; flex-shrink:0">
+      <a href="#apply-form" class="btn btn-primary" style="white-space:nowrap; flex-shrink:0">Apply now</a>
+      <a href="RD1 Network.dc.html" class="btn btn-secondary" style="white-space:nowrap; flex-shrink:0">Back to Network</a>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const FAQS = [
+  { q:'Is there a membership fee?', a:'Season Zero affiliation is free. A standard membership fee structure will be introduced for the 2027 season and shared with members well in advance.' },
+  { q:'Do we have to compete in a city circuit to be a member?', a:'No. Competing in Season Zero is one benefit of membership, not a requirement of it — some members join primarily for the network, grants, and partnerships.' },
+  { q:'What if our crew doesn\u2019t have a legal entity yet?', a:'That\u2019s fine. We ask for a real point of contact and a track record of regular group runs, not formal incorporation.' },
+  { q:'Can more than one crew from the same city apply?', a:'Yes. RunDivision is not exclusive by city \u2014 multiple crews from the same market can hold independent memberships.' },
+  { q:'What does "code of conduct" actually cover?', a:'Basic runner safety at group events, a zero-tolerance policy on harassment or discrimination, and clear reporting steps if something goes wrong. The full document is shared during onboarding.' },
+  { q:'What happens if an application is declined?', a:'We tell you directly what\u2019s missing \u2014 usually a track record, a safety practice, or contact information \u2014 and you\u2019re welcome to reapply once it\u2019s addressed.' }
+];
+
+class Component extends DCLogic {
+  state = { submitted: false };
+  renderVals() {
+    return {
+      faqs: FAQS,
+      submitted: this.state.submitted,
+      submitLabel: this.state.submitted ? 'Application submitted' : 'Submit application',
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content=".image-slots.state.json" data-resource-id="image-slots-state" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/styles.css">
+<script src="_ds/nocturne-52a05e7b-52d2-4dbf-b825-b2f0f14b94fb/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  #dc-root, :root {
+    --color-bg: #0a0a0b;
+    --color-surface: #17161a;
+    --color-text: #f2efec;
+    --color-divider: rgba(242,239,236,.15);
+    --color-accent: #ff6a35;
+    --color-accent-100: #fff3ec; --color-accent-200: #ffdccb; --color-accent-300: #ffbd9c;
+    --color-accent-400: #ff8f5c; --color-accent-500: #ff5a24; --color-accent-600: #dc4517;
+    --color-accent-700: #a63512; --color-accent-800: #6b240e; --color-accent-900: #3a1408;
+    --color-neutral-300: #d6d0ca; --color-neutral-400: #b9b2ac; --color-neutral-500: #98918b;
+    --color-neutral-600: #7a736e; --color-neutral-700: #5c5651; --color-neutral-800: #3a3632; --color-neutral-900: #232020;
+  }
+  body { background: #060607; }
+  a { color: var(--color-accent-300); }
+  a:hover { color: var(--color-accent-200); }
+</style>
+</helmet>
+
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100%">
+
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 32px; border-bottom:1px solid var(--color-divider)">
+    <dc-import name="RD1 Nav" active="teams" cta-label="Apply to join" cta-href="RD1 Network.dc.html#join" hint-size="100%,58px"></dc-import>
+  </div>
+
+  <div style="padding:64px 32px 40px; max-width:800px">
+    <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--color-accent-400); margin-bottom:16px">The founding crews</div>
+    <h1 style="font-size:48px; line-height:1.05; letter-spacing:-.03em; margin:0 0 18px">Ten teams. Ten cities.</h1>
+    <p class="text-muted" style="font-size:16px; line-height:1.6; margin:0">Every RD1 team is an independent, community-led run crew that competes as its city's representative in Season Zero. Standings across the Championship, Club and Impact Cups are built from what these teams do each round.</p>
+  </div>
+
+  <div style="padding:16px 32px 64px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px">
+    <sc-for list="{{ teams }}" as="t" hint-placeholder-count="10">
+      <div style="border:1px solid var(--color-divider); border-radius:var(--radius-md); background:var(--color-surface); overflow:hidden; display:flex; flex-direction:column" id="{{ t.id }}" style-hover="border-color:var(--color-accent-700)">
+        <div class="lighten" style="position:relative; height:150px; border-bottom:1px solid var(--color-divider)">
+          <image-slot id="{{ t.slotId }}" shape="rect" placeholder="{{ t.slotHint }}"></image-slot>
+        </div>
+        <div style="padding:20px 22px 22px; display:flex; flex-direction:column; flex:1">
+          <div style="font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-600); margin-bottom:8px">{{ t.city }}</div>
+          <div style="font-family:var(--font-heading); font-size:20px; letter-spacing:-.02em; margin-bottom:14px">{{ t.name }}</div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; border-top:1px solid var(--color-divider); padding-top:14px; margin-top:auto">
+            <div>
+              <div class="text-muted" style="font-size:9px; letter-spacing:.1em; text-transform:uppercase">Champ</div>
+              <div style="font-family:var(--font-heading); font-size:15px">{{ t.champ }}</div>
+            </div>
+            <div>
+              <div class="text-muted" style="font-size:9px; letter-spacing:.1em; text-transform:uppercase">Club</div>
+              <div style="font-family:var(--font-heading); font-size:15px">{{ t.club }}</div>
+            </div>
+            <div>
+              <div class="text-muted" style="font-size:9px; letter-spacing:.1em; text-transform:uppercase">Impact</div>
+              <div style="font-family:var(--font-heading); font-size:15px">{{ t.impact }}</div>
+            </div>
+          </div>
+          <a href="{{ t.link }}" class="btn btn-ghost" style="margin-top:14px; align-self:flex-start; font-size:12px">{{ t.linkLabel }}</a>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="padding:48px 32px 64px; border-top:1px solid var(--color-divider); display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap">
+    <div>
+      <h2 style="font-size:26px; margin:0 0 8px">See how they stack up.</h2>
+      <p class="text-muted" style="font-size:14px; margin:0">Full standings across all three cups, updated after every round.</p>
+    </div>
+    <a href="RD1 Standings.dc.html" class="btn btn-primary" style="white-space:nowrap">View standings →</a>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const TEAMS = [
+  { id:'det', name:'WERUN313', city:'Detroit', champ:86, club:72, impact:64 },
+  { id:'chi', name:'PEACE RUNNERS 773', city:'Chicago', champ:78, club:81, impact:70 },
+  { id:'dc',  name:'District Running Collective', city:'Washington, DC', champ:69, club:75, impact:81 },
+  { id:'la',  name:'KEEPITRUNHUNDRED', city:'Los Angeles', champ:74, club:66, impact:58 },
+  { id:'mke', name:'FEAR MKE', city:'Milwaukee', champ:61, club:70, impact:52 },
+  { id:'cvl', name:'PROLYFYCK RUN CREWW', city:'Charlottesville', champ:58, club:54, impact:76 },
+  { id:'stl', name:'STL RUN CREW', city:'St. Louis', champ:52, club:60, impact:48 },
+  { id:'nsh', name:'6RUN5', city:'Nashville', champ:47, club:58, impact:44 },
+  { id:'bos', name:'PIONEERS RUN CREW', city:'Boston', champ:44, club:50, impact:41 },
+  { id:'atl', name:'ATLANTA RUN CLUB', city:'Atlanta', champ:40, club:46, impact:38 }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      teams: TEAMS.map(t => ({
+        ...t,
+        slotId: 'rd1-team-' + t.id,
+        slotHint: t.name + ' — crew photo',
+        link: t.id === 'dc' ? 'RD1 Team DRC.dc.html' : t.id === 'chi' ? 'RD1 Studios Crew Report.dc.html' : t.id === 'atl' ? 'RD1 Team Atlanta.dc.html' : t.id === 'bos' ? 'RD1 Team Pioneers.dc.html' : 'RD1 Season Zero.dc.html',
+        linkLabel: t.id === 'dc' ? 'View team profile →' : t.id === 'chi' ? 'View crew report →' : (t.id === 'atl' || t.id === 'bos') ? 'View team profile →' : 'View circuit →'
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>
